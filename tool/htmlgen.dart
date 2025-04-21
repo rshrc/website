@@ -2,40 +2,20 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:args/args.dart';
 import 'package:html/dom.dart';
-import 'package:html/parser.dart';
 import 'package:intl/intl.dart';
-import 'package:markdown/markdown.dart' as md;
 import 'package:path/path.dart' as path;
+import 'package:html/parser.dart';
+import 'package:markdown/markdown.dart' as md;
 import 'package:toml/toml.dart';
 import 'package:yaml/yaml.dart';
 
 import 'src/atom_xml.dart';
-import 'src/obsidian_comment_syntax.dart';
-import 'src/obsidian_highlight_syntax.dart';
-import 'src/obsidian_mathjax_syntax.dart';
 
 void main(List<String> args) {
-  var argParser = ArgParser(allowTrailingOptions: true)
-    ..addFlag(
-      'generate-rss',
-      help: 'If set to true, the found articles will be added to the RSS feed.',
-      defaultsTo: false,
-    );
-  var argOptions = argParser.parse(args);
-  var tomlPath = argOptions.rest.singleOrNull;
-
-  if (tomlPath == null) {
-    print('Missing toml file path. Usage:\n\n'
-        '  htmlgen path/to/config.toml\n');
-    print(argParser.usage);
-    exit(2);
-  }
-
   TomlDocument document;
   try {
-    document = TomlDocument.loadSync(tomlPath);
+    document = TomlDocument.loadSync('htmlgen.toml');
   } on ParseError catch (e) {
     print("Parse error: $e");
     exit(99);
@@ -45,14 +25,11 @@ void main(List<String> args) {
   }
 
   var options = document.toMap();
-  var feedTitle = options['feed_title'] as String;
-  var selfUrl = options['self_url'] as String;
   var htmlTemplatePath = options['page_template'] as String;
   var markdownDirectoryPath = options['markdown_directory'] as String;
   var imagesDirectoryPath = options['images_directory'] as String;
   var footerMarkdownPath = options['footer_markdown_path'] as String;
   var markdownFilesBackup = options['markdown_files_backup'] as String;
-  var defaultSocialImageUrl = options['default_social_image'] as String;
 
   var outputDirectoryPath = options['output_directory'] as String;
   var outputImagesSubdirectoryPath =
@@ -104,7 +81,10 @@ void main(List<String> args) {
       filename,
       '.html',
     );
-    final blogUrl = Uri.parse(selfUrl);
+
+    final baseUrl = Uri.parse('https://banerjeerishi.com');
+
+    final blogUrl = Uri.parse('${baseUrl}/text');
     var fullUrl = blogUrl.resolve(htmlFileName);
 
     // Remove and parse front-matter.
@@ -122,7 +102,8 @@ void main(List<String> args) {
     );
     var description = frontMatter['description'] ?? '';
     var date = frontMatter['date'] ?? '';
-    var socialImage = frontMatter['social_image'] ?? defaultSocialImageUrl;
+    var socialImage = frontMatter['social_image'] ??
+        'https://banerjeerishi.com/img/profile.png';
     var shouldPublish = frontMatter['publish'] == true;
 
     if (!shouldPublish) {
@@ -173,15 +154,6 @@ void main(List<String> args) {
       // Use things like fenced code block.
       // See https://pub.dev/packages/markdown for details.
       extensionSet: md.ExtensionSet.gitHubWeb,
-      inlineSyntaxes: [
-        ObsidianCommentInlineSyntax(),
-        ObsidianHighlightInlineSyntax(),
-        ObsidianMathJaxInlineSyntax(),
-      ],
-      blockSyntaxes: [
-        ObsidianCommentBlockSyntax(),
-        ObsidianMathJaxBlockSyntax(),
-      ],
     );
     var doc = parseFragment(htmlSource);
 
@@ -193,12 +165,9 @@ void main(List<String> args) {
     // Gather all images. Not just embeds, but also images referenced
     // by regular (non-Obsidian) markdown or HTML.
     var images = <ImageContents>[];
-    final srcElements = <Element>[
-      ...doc.querySelectorAll('img'),
-      ...doc.querySelectorAll('source'),
-    ];
-    for (final (index, image) in srcElements.indexed) {
-      assert(image.localName == 'img' || image.localName == 'source');
+    var htmlImageElements = doc.querySelectorAll('img');
+    for (final image in htmlImageElements) {
+      assert(image.localName == 'img');
       final src = image.attributes['src']!;
       final srcUri = Uri.parse(src);
 
@@ -219,11 +188,6 @@ void main(List<String> args) {
         // Copy the file.
         final newPath = path.join(outputDirectoryPath, newSrcPath);
         File(newPath).writeAsBytesSync(imageContents.data);
-      }
-
-      if (image.localName == 'img' && index > 0) {
-        // Apart from the first image, mark all as loading="lazy".
-        image.attributes['loading'] = 'lazy';
       }
     }
 
@@ -277,18 +241,10 @@ void main(List<String> args) {
     print('${a.created} - ${a.title}');
   });
 
-  if (argOptions['generate-rss']) {
-    var atomXmlFilePath = path.join(outputDirectoryPath, 'atom.xml');
-    var atomXmlFile = File(atomXmlFilePath);
-    var atomContents = generateAtomXml(
-      articles: articles,
-      feedTitle: feedTitle,
-      sourceUrl: selfUrl,
-    );
-    atomXmlFile.writeAsStringSync(atomContents);
-  } else {
-    print('skipping generating atom.xml');
-  }
+  var atomXmlFilePath = path.join(outputDirectoryPath, 'atom.xml');
+  var atomXmlFile = File(atomXmlFilePath);
+  var atomContents = generateAtomXml(articles);
+  atomXmlFile.writeAsStringSync(atomContents);
 }
 
 class Article {
@@ -425,11 +381,7 @@ String _smartyPants(String text) {
     "doesn't",
     "haven't",
     "hasn't",
-    "hadn't",
-    "I'd",
-    "we'd",
-    "you'd",
-    "they'd",
+    "hadn't"
   ];
 
   // Replace single quotes in common contractions

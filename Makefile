@@ -1,14 +1,15 @@
 clean:
 	rm -rf ./build
 
-serve: build
-	npx superstatic .
+run: builder
+	serve -s build -l 3000
 
-deploy: clean build
-	firebase deploy
-	@echo "Visit https://filiph.net"
+deploy: builder
+		firebase deploy
+		echo "Visit @ https://banerjeerishi.com"
 
-build: copy_web htmlgen_blog htmlgen_flutter_performance copy_old
+builder: copy_web htmlgen
+
 
 copy_web: spanify
 	mkdir -p build
@@ -23,13 +24,5 @@ spanify:
 	  src/index.md \
 	  > web/index.html
 
-htmlgen_blog:
-	dart --enable-asserts tool/htmlgen.dart \
-      htmlgen-blog.toml \
-      --generate-rss
-
-htmlgen_flutter_performance:
-	dart --enable-asserts tool/htmlgen.dart \
-      htmlgen-flutter-performance.toml \
-      --generate-rss
-
+htmlgen:
+	dart --enable-asserts tool/htmlgen.dart

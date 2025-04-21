@@ -1,114 +1,76 @@
 <img class="portrait" 
      width="175"
      height="233"
-     src="img/filip.jpg" 
-     srcset="img/filip.jpg 1x, img/filip@2x.jpg 2x, img/filip@3x.jpg 3x, img/filip@4x.jpg 4x" 
-     alt="Filip Hracek’s face">
+     src="img/profile.jpg" 
+     srcset="img/profile.jpg 1x, img/profile@2x.jpg 2x, img/profile@3x.jpg 3x, img/profile@4x.jpg 4x"
+     alt="Rishi's face">
      
-# Filip Hráček
+# Rishi Banerjee
 
-Hi, I’m Filip. I’m a pro&shy;gram&shy;ming buff with formal train&shy;ing
-in jour&shy;nal&shy;ism. 
-I&nbsp;worked in Sili&shy;con Valley, now I’m based in Prague. 
-I&nbsp;build games, teach pro&shy;gram&shy;ming, explain things, 
-and create silly soft&shy;ware experiments.
+Hi, I’m Rishi! Full-time entrepreneur, part-time philosopher, and currently leading engineering at a B2B SaaS startup. I spend my time building small games, writing automation scripts, and creating apps that make life easier—or at least more interesting. I write stuff in Python, Ruby, and Dart, and yeah, I’m one of those Vim enthusiasts. Also trying to pick up new languages—because? Based in Bengaluru, so if you’re in town, hit me up!
+ 
+## Gigs & Projects
 
-## Projects
-
-* [Giant Robot Game](https://store.steampowered.com/app/2538440/GIANT_ROBOT_GAME/) in development
-* [Knights of San Francisco](https://egamebook.com/knights) iOS/Android game
-* [egamebook.com](https://egamebook.com/) text game framework
-* [Insignificant Little Vermin](https://egamebook.com/vermin) sword & sorcery adventure
-* [Unsure Calculator](https://filiph.github.io/unsure/) tool and notation
-* [linkcheck](https://github.com/filiph/linkcheck) link checker
-* [@year_progress](https://techhub.social/@year_progress) mastodon bot
-* [Star map 2D](https://starmap2d.appspot.com/) self-organizing map
-* [conference_darwin](https://github.com/filiph/conference_darwin) evolutionary algorithm
+* [Bitsila ONDC SaaS](https://www.bitsila.com/) - Founding Engineer
+* [Opmaint](https://apps.apple.com/in/app/opmaint/id6502909679) - Engineering Head
+* [PacketMan](https://github.com/rshrc/PacketMan) - Open Source Postman Alternative
+* [Service Recommender](hhttps://github.com/rshrc/service-recommendation) 
+* [Sales Predictor](https://github.com/rshrc/dell-recommend) - ML based sales prediction
+* [Dell Internship](https://dell.com) - interned here in my 5th semester of college. 
+* [Reddit2Spotify](https://github.com/rshrc/reddit2spotify) a simple script which creates you playlists from songs recommended in Reddit comment section, for example [this](https://www.reddit.com/r/spotify/comments/18excgh/give_me_song_recommendations/). 
+* [FlutterCRUDInterface](https://github.com/rshrc/FlutterCRUDInterface) - a flutter boilerplate generator
 
 ## Experiments
 
-* [Automatic Donald Trump](https://filiph.github.io/markov/) Markov chain
-* [Life-time value](https://github.com/filiph/life-time-value-calc) calculator
-* [Fuzzy logic for web analytics](https://filiph.net/fuzzy/) proof-of-concept
-* [A.I. eshop cart](https://filiph.net/eshop-ai/) proof-of-concept
-* [Startup namer](https://filiph.github.io/startup_namer/) web app
-* [Significant prime number finder](https://filiph.github.io/prime_finder/) web app
-* [Font with a story](https://egamebook.com/font/) experiment
-* [Genetically brewed neural network ship captains](https://filiph.net/spacepilot/) experiment
-* [DJ notation](https://filiph.net/dj-notation/) proposal
-* [youtubeology.com](https://www.youtubeology.com/) research
-* [tmzns.com](https://web.archive.org/web/20240425115816/http://www.tmzns.com/) timezones converter
-* [YouTube subtitles prettifier](https://filiph.github.io/youtube_subs/) web tool
-* [Script Prompter](https://filiph.net/prompter/) web tool
-* [Slot machine](https://filiph.net/slot/) experiment
-* [Lorem ipsumize](https://filiph.net/lorem/) web tool
-* [Calendar linker](https://filiph.net/gcal/) web tool for Google Calendar
-* [docsToBlogger](https://filiph.net/d2b/) web tool
-* [`mailto:` persistence](https://filiph.net/mailto/) proof-of-concept
-* [Alojz.cz](https://alojz.cz/) weather <abbr title="Natural Language Generation">NLG</abbr> system <span class="note"> (in Czech)</span>
-* [Stav mobilního webu](https://stav-mobilniho-webu.appspot.com/) research <span class="note"> (in Czech)</span>
-* [tisicknih.cz](http://tisicknih.cz/) book recommendation engine <span class="note"> (in Czech)</span>
-* [Github](https://github.com/filiph) &mdash; all other projects
-
-<!--* [krestni-jmena.cz](https://krestni-jmena.cz/) database <span class="note"> (in Czech)</span>-->
-
-## Social
-
-* [Filip’s newsletter](https://egamebook.us3.list-manage.com/subscribe?u=e232ffe7d6d21c3e969a1e651&id=69ea4d7259)
-* [Raindead Games](https://discord.gg/J8mE7uqJAs) Discord server
-* <a rel="me" href="https://mastodon.social/@filiph">Mastodon</a>
-* [Twitter](https://twitter.com/filiphracek)
-* [Github](https://github.com/filiph)
-* [LinkedIn](https://www.linkedin.com/in/visible)
-* [StackOverflow](https://stackoverflow.com/users/1416886/filiph)
-* filip.hracek<span style="display:none">deletethisifyourenotarobot</span>@gmail<span style="display:none">thisaswell</span>.com
+* [Hotspot Generation Scripts](https://github.com/rshrc/boot-system-scripts) boot for Rpi4
+* [Varnamala](varnamala.org) - A duolingo clone for making language learning more accessible
+* [falcon-mini](https://github.com/rshrc/falcon-mini) software to make a Rpi into a talking robot, which you can plug into toys 
 
 ## Writing
 
-* Filip’s newsletter (see above)
-* Articles here on [filiph.net/text](https://filiph.net/text/) ([RSS](https://filiph.net/text/atom.xml))
-* [Self-Improving Developer](https://selfimproving.dev/) book
-  * [How Google builds web frameworks](https://selfimproving.dev/how-google-builds-web-frameworks.html)
-  * [The ‘Hello World’ fallacy](https://selfimproving.dev/the-hello-world-fallacy.html)
-* [Medium](https://medium.com/@filiph)
-  * [Player agency in an open world, versus combinatorial explosion](https://medium.com/@filiph/player-agency-in-an-open-world-versus-combinatorial-explosion-5a6bcd7d0d38)
-  * [Skyrim rendered in text](https://medium.com/@filiph/skyrim-rendered-in-text-1899548ab2c4)
-  * [Why I’m joining the Dart team, of all places](https://medium.com/dartlang/why-i-m-joining-the-dart-team-of-all-places-d0b9f83a3b66)
-  * [What kills toddlers in the U.S. [scatter plot]](https://medium.com/@filiph/what-kills-toddlers-in-the-u-s-scatter-plot-90d2327ce3c2)
-* [Runtime.cz](https://www.runtime.cz/) blog <span class="note"> (in Czech)</span>
-* [Vasil.cz](https://www.vasil.cz/) collaborative blog <span class="note"> (in Czech)</span>
-* [Centrum zábavy](https://books.google.com/books/about/Centrum_z%C3%A1bavy.html?id=CVbsBQAAQBAJ) free ebook <span class="note"> (in Czech)</span>
+* Articles [here](https://banerjeerishi.com/text) ([RSS](https://banerjeerishi.com/text/atom.xml))
+* [Medium](https://medium.com/@banerjeerishi)
+  * [Django & DRF Flexibility](https://medium.com/django-unleashed/django-drf-flexibility-38c5e6b6435c)
+  * [Django Lifecycle Hooks](https://medium.com/django-unleashed/django-lifecycle-hooks-ed731e4c829a)
+  * [MySQL on Manjaro](https://medium.com/@banerjeerishi/mysql-on-manjaro-973e4bfc4f05) - this one helped few people
+* A Few Fav Tech Helpers - these are here as well as medium
+  * [Easy Crontab with Celery-Beat](https://banerjeerishi.com/text/easy-crontab-with-celery-beat.html)
+  * [Setting up Django with Docker Compose & OrbStack](https://banerjeerishi.com/text/setting-up-with-docker-compose-&-orbstack.html)
+  * [Historical Records in Django](https://banerjeerishi.com/text/historical-records-in-django.html)
+  * [Why I chose Vim?](https://banerjeerishi.com/text/why-i-chose-vim.html) - My journey from despising Vim in my first year of college to crowning it as the ultimate editor
+  * [Writing a scheduler using Django/DRF](https://banerjeerishi.com/text/writing-a-scheduler-using-django-and-drf.html)
+  * [Why Choose Django as a Startup?](https://banerjeerishi.com/text/why-choose-django-as-a-startup.html)
+  * [Rails really packs a punch](https://banerjeerishi.com/text/rails-really-packs-a-punch.html) — I'm a huge Django enthusiast myself, but I've got to admit, Rails offers a level of comprehensiveness that Django just doesn't match. The only thing keeping me anchored to Django is my preference for Python over DHH Lang (also known as Ruby)
 
-## Public speaking
+## Social
 
-* [YouTube channel](https://www.youtube.com/filiphracek)
-* [Futuristic UI](https://slideslive.com/39000557/futuristic-ui-how-to-make-users-feel-like-they-re-in-a-scifi-movie?ref=folder-117551) @ WebExpo 2023
-* [Secrets to Effortless Code Editing in Android Studio](https://www.udemy.com/course/effortless-android-studio/?referralCode=2CCB5A67D39B74E3058D) Udemy course
-* [Quick Start to Game Development in Flutter](https://www.youtube.com/watch?v=yTMzEFv3mBI) @ Flutter Vikings 2022
-* [Candid DevRel: The Flutter Boring Show](https://devrel.net/developer-experience/the-flutter-boring-show-and-other-ways-we-make-ourselves-look-human) @ DevRelCon SF 2019
-* [Pragmatic State Management in Flutter](https://www.youtube.com/watch?v=d_m5csmrf7I) @ Google I/O 2019
-* [Announcing Flutter 1.0 demo](https://www.youtube.com/watch?v=kpcjBD1XDwU&t=389) @ Flutter Live 2018
-* [Build reactive mobile apps with Flutter](https://www.youtube.com/watch?v=RS36gBEp8OI) @ Google I/O 2018
-* [Nové technologie mobilního webu](https://www.ceskatelevize.cz/ivysilani/10000000212-webexpo-2015/215254000470012-nove-technologie-mobilniho-webu-rychly-prehled/dalsi-casti/3) @ WebExpo 2015 <span class="note"> (in Czech)</span>
-* [Přednáška o mobilech](https://www.youtube.com/watch?v=3QROfDsuepo) @ mDevCamp 2015 <span class="note"> (in Czech)</span>
-* [TL;DR přehled statistik](https://www.youtube.com/watch?v=-X1W4e9gZZQ) @ mDevCamp 2014 <span class="note"> (in Czech)</span>
-* [Tipy a triky pro profesionální uživatele](https://www.youtube.com/watch?v=fXkwBBvDChk) @ mDevCamp 2014 <span class="note"> (in Czech)</span>
-* [Technologie, o kterých byste měli vědět](https://www.youtube.com/watch?v=AiD9ky6pcvU) @ OMG Future 2013 <span class="note"> (in Czech)</span>
-* [Dart 1.0](https://www.youtube.com/watch?v=-8xSupF_Iek) @ DevFest Prague 2013 <span class="note"> (in Czech)</span>
-* [Google BigQuery and other tools for big data](https://www.youtube.com/watch?v=vXZnFs5arQI) @ BigClean 2012
-* [Why Dart?](https://www.youtube.com/watch?v=pKe8p-SLgAc) @ dotJS 2012
+* [Github](https://github.com/rshrc)
+* [LinkedIn](https://www.linkedin.com/in/rishibanerjee21/)
+* [StackOverflow](https://stackoverflow.com/users/8028903/deprecatedapi)
+* rishi.banerjee1009<span style="display:none">deletethisifyourenotarobot</span>@gmail<span style="display:none">thisaswell</span>.com
+
+## Public appearance
+
+* [Joseph and the Amazing Technicolor Dreamcoat](https://www.youtube.com/watch?v=CVfCU8UM7Dw&t=3720s&pp=ygUhc3BzIDEyNSB5ZWFycyBjZWxlYnJhdGlvbiBhc2Fuc29s) - I was the pharoah 
+
   
-## Music
+## Music Taste
 
-* [Philip Age](https://filiph.net/philipage.com/) DJ sets
-* [Philip Age](https://philipage.bandcamp.com/) tracks
+* [Breaking Benjamin](https://open.spotify.com/playlist/37i9dQZF1DZ06evO3iBwVq?si=16e1f990c0ee474e) 
+  - Favorite Album [Phobia](https://open.spotify.com/album/6yJdQMlMkfYJFiSsL6764c?si=45d70faf4b364974)
+* [Foo Fighters](https://foofighters.com/) go buy some merch
+  - Favorite Album [Wasting Light](https://open.spotify.com/album/5lnQLEUiVDkLbFJHXHQu9m?si=1658019860394a16)
+  - [Sonic Highways](https://open.spotify.com/album/2qwN15acAl3sm3Idce5vK9?si=b7c6089d2e8e4881) is surreal
+* [RTJ](https://open.spotify.com/artist/4RnBFZRiMLRyZy0AzzTg2C?si=c96d966285d84e67) - Run the Jewels
+  - Truth be told, I got hooked with [Legend has It](https://open.spotify.com/track/7satW8tFLasyZbftvrWFBP?si=4d6b77194c104154) from Black Panther, then I heard [A Report to the Shareholders](https://open.spotify.com/track/7cXFQxnCKlTWdn1vow1v55?si=677c0527d55e4180) 4 years later, paving the way for me to explore all the albums by RTJ, and I love each and every one of them
+* [Danzig](https://open.spotify.com/artist/34c4iQ5tkaZKu6Sv28BTde?si=Gt9G3W_hQma2EKPJdQGv5A) - Listen to this [song](https://open.spotify.com/track/1Gt07aYIpl5yJcTbH95s7v?si=f7d4079542544b9d) 
+* [The Black Album](https://open.spotify.com/album/2ROptx2K5R4YYqlQQRpT7k?si=vnnMgVuxTJuufcTDt6yF9Q)
+* [B.B. King](https://open.spotify.com/artist/5xLSa7l4IV1gsQfhAMvl0U?si=790df151fda7468e) is always gonna make the list :)
+* [Sound City - Reel to Reel](https://open.spotify.com/album/066mZjq57UkWDAM7A6PWce?si=ddf7eb5c38bd4d3f) you need to listen to this album, if born as a mortal on this mortal earth, for the love of God!
+* [Porcupine Tree](https://open.spotify.com/artist/5NXHXK6hOCotCF8lvGM1I0?si=dbe077a1f22d4655) this band requires so much more attention, Steven Wilson is literally a living God of Music. A college senior recommended this to me, and I am thankful to her wherever she is!
 
 ## About this page
 
-This page consist of only two resources: the HTML and the picture.
+This page consists of only two resources: the HTML and the picture.
 The ‘appearing’ effect is achieved using the CSS `keyframes` feature, and it is
-orchestrated by a compile-time Dart script accessible 
-[here](https://github.com/filiph/filiphnet/blob/master/tool/spanify.dart).
-
-You can [edit this page](https://github.com/filiph/filiphnet/edit/master/src/index.md)
-on Github.
+orchestrated by a compile-time Dart script. 

@@ -2,63 +2,9 @@
   "hosting": {
     "public": "build",
     "ignore": [
-      "**/packages/**/*.dart"
-    ],
-    "headers": [ {
-      "source": "/",
-      "headers": [ {
-        "key": "Cache-Control",
-        "value": "max-age=300"
-      } ]
-    }, {
-      "source": "**/*.@(jpg|jpeg|gif|png|ico)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "max-age=2592000"
-        }
-      ]
-    } ],
-    "redirects": [ {
-      "source": "/+",
-      "destination": "https://plus.google.com/u/0/+filiphracek",
-      "type": 302
-    }, {
-      "source": "/avi",
-      "destination": "https://www.youtube.com/user/filiphracek/videos",
-      "type": 301
-    }, {
-      "source": "/dj",
-      "destination": "http://www.philipage.com/",
-      "type": 301
-    }, {
-      "source": "/japan",
-      "destination": "https://japan.filiph.net/",
-      "type": 301
-    }, {
-      "source": "/mp3",
-      "destination": "http://www.philipage.com/",
-      "type": 301
-    }, {
-      "source": "/mobfriendly",
-      "destination": "https://stav-mobilniho-webu.appspot.com/",
-      "type": 301
-    }, {
-      "source": "/tztime",
-      "destination": "http://www.tmzns.com/",
-      "type": 301
-    }, {
-      "source": "/counter",
-      "destination": "https://dartpad.dev/?id=d33226a8ba7171dbc2095136b0644a84",
-      "type": 301
-    }, {
-      "source": "/await",
-      "destination": "https://eepurl.com/gzXeo1",
-      "type": 302
-    }, {
-      "source": "/webexpo",
-      "destination": "/webexpo2023",
-      "type": 301
-    } ]
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   }
 }

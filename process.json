@@ -1,0 +1,12 @@
+{
+    "apps": [{
+      "name": "MyApp",
+      "script": "make",
+      "args": "run",
+      "watch": true,
+      "ignore_watch": ["node_modules", "logs", "tmp"],
+      "watch_options": {
+        "followSymlinks": false
+      }
+    }]
+  }

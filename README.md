@@ -1,8 +1,12 @@
-# filiph.net 
+# banerjerishi.com
 
-[![Build Status](https://travis-ci.org/filiph/filiphnet.svg?branch=master)](https://travis-ci.org/filiph/filiphnet)
+## Acknowledgments
 
-Code for Filip Hracek's personal homepage.
+This website is a fork of [filiph/filiphnet](https://github.com/filiph/filiphnet), originally created by **Filip Hracek**, whose work I’ve long admired. His minimal, Markdown-first approach to personal publishing inspired me to build upon it with my own customizations and additions.
+
+Check out the original project [here](https://github.com/filiph/filiphnet).
+
+Code for Rishi's personal homepage.
 
 Use `make` to build and deploy this. For example:
 
@@ -42,3 +46,7 @@ or by dragging them into the Obsidian window as an embed:
 
 That's all!
 ```
+
+# Todos
+
+1. create newsletter for integration

@@ -26,3 +26,7 @@ web/index.html
 
 # Node modules / npx
 node_modules/
+
+markdowns/
+txt-samples/
+src/text/pages/

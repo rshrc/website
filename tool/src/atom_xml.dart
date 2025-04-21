@@ -3,11 +3,7 @@ import 'dart:io';
 
 import '../htmlgen.dart';
 
-String generateAtomXml({
-  required List<Article> articles,
-  required String feedTitle,
-  required String sourceUrl,
-}) {
+String generateAtomXml(List<Article> articles) {
   String buildEntry(Article article) {
     var content = """
     <p>${article.description}</p>
@@ -22,29 +18,26 @@ String generateAtomXml({
     <published>${article.created.toIso8601String()}</published>
     <updated>${article.created.toIso8601String()}</updated>
     <author>
-      <name>Filip Hracek</name>
-      <uri>https://filiph.net/</uri>
+      <name>Rishi Banerjee</name>
+      <uri>https://banerjeerishi.com/</uri>
     </author>
     <content type="html">${_escapeXml(content)}</content>
   </entry>
     ''';
   }
 
-  assert(sourceUrl.endsWith('/'));
-  final feedUrl = '${sourceUrl}atom.xml';
-
   return '''
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title>$feedTitle</title>
-  <link href="$sourceUrl"/>
-  <link type="application/atom+xml" rel="self" href="$feedUrl"/>
+  <title>banerjeeirishi.com/text</title>
+  <link href="https://banerjeerishi.com/text/"/>
+  <link type="application/atom+xml" rel="self" href="https://banerjeerishi.com/text/atom.xml"/>
   <updated>${DateTime.now().toUtc().toIso8601String()}</updated>
-  <id>$sourceUrl</id>
+  <id>https://banerjeerishi.com/text/</id>
   <author>
-    <name>Filip Hracek</name>
-    <email>filip.hracek@gmail.com</email>
+    <name>Rishi Banerjee</name>
+    <email>rishibanerjee1009@gmail.com</email>
   </author>
 
   ${articles.map(buildEntry).join('\n')}  
