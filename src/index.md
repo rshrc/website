@@ -71,6 +71,10 @@ Hi, I’m Rishi! Full-time entrepreneur, part-time philosopher, and currently le
 
 ## About this page
 
-This page consists of only two resources: the HTML and the picture.
-The ‘appearing’ effect is achieved using the CSS `keyframes` feature, and it is
-orchestrated by a compile-time Dart script. 
+This page consists of only two resources: the HTML and the picture.  
+The ‘appearing’ effect is achieved using the CSS `keyframes` feature, orchestrated by a compile-time Dart script.
+
+This site is based on [Filiph Hráček](https://github.com/filiph)'s original work on [filiph/filiphnet](https://github.com/filiph/filiphnet), a minimalist, Markdown-first personal site generator.  
+I've forked and extended it with my own customizations — but the core elegance of the setup is very much thanks to Filiph's original vision and engineering.
+
+---
