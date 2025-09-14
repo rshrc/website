@@ -131,13 +131,16 @@ void main(List<String> args) {
       continue;
     }
 
-    var jsonLdString = _generateArticleJsonLd(
-      title: title,
-      description: description,
-      url: fullUrl.toString(),
-      socialImage: socialImage,
-      date: created,
-    );
+    // Generate appropriate JSON-LD schema
+    var jsonLdString = filename == 'index'
+        ? _generatePersonJsonLd()
+        : _generateArticleJsonLd(
+            title: title,
+            description: description,
+            url: fullUrl.toString(),
+            socialImage: socialImage,
+            date: created,
+          );
 
     var obsidianEmbeds = <ObsidianEmbed>[];
     // Take the Markdown with Obsidian-specific notation
@@ -428,6 +431,74 @@ final _simpleFuture = RegExp(r"(\w)'ll\b");
 
 final _doubleQuotes = RegExp(r'"(\s?\w.*?)([!,.?;:]?\s?)"');
 
+String _generatePersonJsonLd() {
+  return '''
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rishi Banerjee",
+    "url": "https://banerjeerishi.com",
+    "image": "https://banerjeerishi.com/img/profile@4x.jpg",
+    "sameAs": [
+      "https://github.com/rshrc",
+      "https://www.linkedin.com/in/rishibanerjee21/",
+      "https://stackoverflow.com/users/8028903/deprecatedapi",
+      "https://medium.com/@banerjeerishi"
+    ],
+    "jobTitle": "Founding Engineer & Software Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Bitsila"
+    },
+    "knowsAbout": [
+      "Python Programming",
+      "Django Framework", 
+      "Ruby on Rails",
+      "Dart Programming",
+      "Vim Editor",
+      "Software Engineering",
+      "Backend Development",
+      "API Design",
+      "Web Development",
+      "Startups",
+      "B2B SaaS"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "St. Paul's School, Asansol"
+    },
+    "homeLocation": {
+      "@type": "City",
+      "name": "Bengaluru",
+      "addressCountry": "India"
+    },
+    "description": "Rishi Banerjee is a full-time entrepreneur and software engineer specializing in Python, Django, Ruby on Rails, and Dart. Currently leading engineering at a B2B SaaS startup with expertise in backend development and scalable web applications.",
+    "keywords": "Rishi Banerjee, Python developer, Django expert, Ruby on Rails, Vim enthusiast, software engineer, Bengaluru developer"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Rishi Banerjee - Software Engineer & Entrepreneur",
+    "url": "https://banerjeerishi.com",
+    "author": {
+      "@type": "Person",
+      "name": "Rishi Banerjee"
+    },
+    "description": "Personal website of Rishi Banerjee, software engineer specializing in Python, Django, Ruby on Rails, and Vim. Technical articles and projects.",
+    "keywords": "Rishi Banerjee, Python, Django, Ruby on Rails, Vim, software engineering",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://banerjeerishi.com/text/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+]
+</script>
+''';
+}
+
 String _generateArticleJsonLd({
   required String title,
   required String description,
@@ -436,6 +507,21 @@ String _generateArticleJsonLd({
   required DateTime date,
 }) {
   final isoDate = _isoDateFormat.format(date.toUtc());
+  
+  // Generate contextual keywords based on title content
+  var contextualKeywords = <String>[];
+  var titleLower = title.toLowerCase();
+  
+  if (titleLower.contains('django')) contextualKeywords.addAll(['Django', 'Python', 'web framework', 'backend']);
+  if (titleLower.contains('rails')) contextualKeywords.addAll(['Ruby on Rails', 'Ruby', 'web development']);
+  if (titleLower.contains('vim')) contextualKeywords.addAll(['Vim', 'text editor', 'productivity', 'development tools']);
+  if (titleLower.contains('python')) contextualKeywords.addAll(['Python programming', 'backend development']);
+  if (titleLower.contains('celery')) contextualKeywords.addAll(['Celery', 'task queue', 'async processing']);
+  if (titleLower.contains('docker')) contextualKeywords.addAll(['Docker', 'containerization', 'DevOps']);
+  if (titleLower.contains('startup')) contextualKeywords.addAll(['startup', 'entrepreneurship', 'business']);
+  
+  var allKeywords = ['Rishi Banerjee', title, ...contextualKeywords].join(', ');
+  
   return '''
 <script type="application/ld+json">
 {
@@ -445,7 +531,13 @@ String _generateArticleJsonLd({
   "author": {
     "@type": "Person",
     "name": "Rishi Banerjee",
-    "url": "https://banerjeerishi.com"
+    "url": "https://banerjeerishi.com",
+    "sameAs": [
+      "https://github.com/rshrc",
+      "https://www.linkedin.com/in/rishibanerjee21/",
+      "https://stackoverflow.com/users/8028903/deprecatedapi",
+      "https://medium.com/@banerjeerishi"
+    ]
   },
   "publisher": {
       "@type": "Organization",
@@ -463,6 +555,14 @@ String _generateArticleJsonLd({
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "${_attributeEscape.convert(url)}"
+  },
+  "keywords": "${_attributeEscape.convert(allKeywords)}",
+  "articleSection": "Technology",
+  "wordCount": 1000,
+  "commentCount": 0,
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-content", "h1", "h2"]
   }
 }
 </script>
