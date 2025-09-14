@@ -1,4 +1,4 @@
-<img clasHi, I'm Rishi Banerjee! Full-time entrepreneur, part-time philosopher, and currently leading engineering at a B2B SaaS startup. I specialize in Python development, Django frameworks, Ruby on Rails, and Dart programming. I spend my time building small games, writing automation scripts, and creating apps that make life easier—or at least more interesting. As a passionate Vim enthusiast and software engineer, I focus on backend development, API design, and scalable web applications. Also trying to pick up new programming languages—because continuous learning is key in software engineering. Based in Bengaluru, India, so if you're in town and want to discuss Python, Django, Rails, or Vim workflows, hit me up!="portrait" 
+<img class="portrait" 
      width="175"
      height="233"
      src="img/profile.jpg" 
