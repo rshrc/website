@@ -14,6 +14,8 @@ builder: copy_web htmlgen
 copy_web: spanify
 	mkdir -p build
 	cp -R ./web/* ./build
+	cp sitemap.xml build/
+	cp robots.txt build/
 
 copy_old:
 	cp -R ./old/* ./build
