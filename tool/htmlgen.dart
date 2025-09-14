@@ -131,6 +131,14 @@ void main(List<String> args) {
       continue;
     }
 
+    var jsonLdString = _generateArticleJsonLd(
+      title: title,
+      description: description,
+      url: fullUrl.toString(),
+      socialImage: socialImage,
+      date: created,
+    );
+
     var obsidianEmbeds = <ObsidianEmbed>[];
     // Take the Markdown with Obsidian-specific notation
     // (such as `![[image.png]]` for an embedded picture)
@@ -198,6 +206,7 @@ void main(List<String> args) {
     var output = template
         .replaceFirst('<!-- GENERATED_HTML -->', html)
         .replaceFirst('<!-- GENERATED_FOOTER -->', footerHtml)
+        .replaceFirst('<!-- GENERATED_JSON_LD -->', jsonLdString)
         .replaceAll('GENERATED_URL_ESCAPED',
             _attributeEscape.convert(fullUrl.toString()))
         .replaceAll('GENERATED_TITLE_ESCAPED', _attributeEscape.convert(title))
@@ -418,6 +427,47 @@ final _simplePossessive = RegExp(r"(\w)'s\b");
 final _simpleFuture = RegExp(r"(\w)'ll\b");
 
 final _doubleQuotes = RegExp(r'"(\s?\w.*?)([!,.?;:]?\s?)"');
+
+String _generateArticleJsonLd({
+  required String title,
+  required String description,
+  required String url,
+  required String socialImage,
+  required DateTime date,
+}) {
+  final isoDate = _isoDateFormat.format(date.toUtc());
+  return '''
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "${_attributeEscape.convert(title)}",
+  "author": {
+    "@type": "Person",
+    "name": "Rishi Banerjee",
+    "url": "https://banerjeerishi.com"
+  },
+  "publisher": {
+      "@type": "Organization",
+      "name": "Rishi Banerjee",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://banerjeerishi.com/img/profile@4x.jpg"
+      }
+  },
+  "datePublished": "$isoDate",
+  "dateModified": "$isoDate",
+  "image": "${_attributeEscape.convert(socialImage)}",
+  "url": "${_attributeEscape.convert(url)}",
+  "description": "${_attributeEscape.convert(description)}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "${_attributeEscape.convert(url)}"
+  }
+}
+</script>
+''';
+}
 
 /// Splits file [content] into [frontMatter] and [markdown].
 ({String? frontMatter, String markdown}) _readFile(String content) {
