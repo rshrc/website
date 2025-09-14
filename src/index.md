@@ -7,7 +7,7 @@
      
 # Rishi Banerjee
 
-Engineering at a startup, I spend my spare hours building small games and side projects. I read stories and philosophy, write short pieces on the side, and I’m exploring the craft of filmmakingm mostly thinking. I’m big on proper meals, strong coffee, and Vim shortcuts. Based in Bengaluru.
+Engineering at a startup, I spend my spare hours building small games and side projects. I read stories and philosophy, write short pieces on the side, and I’m exploring the craft of filmmaking, mostly thinking. I’m big on proper meals, strong coffee, and Vim shortcuts. Based in Bengaluru.
 
 ## Gigs & Projects
 
