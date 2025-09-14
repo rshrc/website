@@ -7,8 +7,8 @@
      
 # Rishi Banerjee
 
-Hi, I’m Rishi! Full-time entrepreneur, part-time philosopher, and currently leading engineering at a B2B SaaS startup. I spend my time building small games, writing automation scripts, and creating apps that make life easier—or at least more interesting. I write stuff in Python, Ruby, and Dart, and yeah, I’m one of those Vim enthusiasts. Also trying to pick up new languages—because? Based in Bengaluru, so if you’re in town, hit me up!
- 
+Engineering at a startup, I spend my spare hours building small games and side projects. I read stories and philosophy, write short pieces on the side, and I’m exploring the craft of filmmakingm mostly thinking. I’m big on proper meals, strong coffee, and Vim shortcuts. Based in Bengaluru.
+
 ## Gigs & Projects
 
 * [Bitsila ONDC SaaS](https://www.bitsila.com/) - Founding Engineer
