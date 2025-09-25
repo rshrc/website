@@ -92,10 +92,9 @@ Engineering at a startup, I spend my spare hours building small games and side p
 * [The One Page Product Spec](https://banerjeerishi.com/text/the-one-page-product-spec.html)
 * [The Three Signs You Aren't Ready to Hire](https://banerjeerishi.com/text/the-three-signs-you-arent-ready-to-hire.html)
 * [Why Your Rails Tests Are Slow](https://banerjeerishi.com/text/why-your-rails-tests-are-slow.html)
-* [Stop Stashing: A Better Git Workflow with Worktrees](https://banerjeerishi.com/text/stop-stashing-a-better-git-workflow-with-worktrees.html)
 * [The Illusion of Being the Doer](https://banerjeerishi.com/text/the-illusion-of-being-the-doer.html)
 * [The Minimalist Hiring Loop](https://banerjeerishi.com/text/the-minimalist-hiring-loop.html)
-* [Stop Stashing, A Better Git Workflow with Worktrees](https://banerjeerishi.com/text/stop-stashing-a-better-git-workflow-with-worktrees.html)
+* [Stop Stashing: A Better Git Workflow with Worktrees](https://banerjeerishi.com/text/stop-stashing-a-better-git-workflow-with-worktrees.html)
 * [Git's Magic Undo Button: Recovering Lost Commits](https://banerjeerishi.com/text/gits-magic-undo-button-recovering-lost-commits.html)
 * [A Simple Guide to PostgreSQL EXPLAIN ANALYZE](https://banerjeerishi.com/text/a-simple-guide-to-postgresql-explain-analyze.html)
 * [Find Bugs Fast with Git Bisect](https://banerjeerishi.com/text/find-bugs-fast-with-git-bisect.html)
@@ -109,8 +108,6 @@ Engineering at a startup, I spend my spare hours building small games and side p
 * [A Simple Fix for Slow Django Queries](https://banerjeerishi.com/text/a-simple-fix-for-slow-django-queries.html)
 * [Build Fast Lists in Flutter](https://banerjeerishi.com/text/build-fast-lists-in-flutter.html)
 * [Your First Engineer](https://banerjeerishi.com/text/your-first-engineer.html)
-
-
 ## Social
 
 * [Github](https://github.com/rshrc)
