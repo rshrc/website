@@ -6,6 +6,131 @@
     <priority>1.00</priority>
   </url>
   <url>
+    <loc>https://banerjeerishi.com/text/how-to-manage-dependencies-in-flutter-without-a-framework.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/beyond-pg-dump-a-simple-guide-to-postgresql-point-in-time-recovery.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/how-to-embed-native-ui-in-flutter-the-simple-way.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-workflow-for-database-migrations-in-git.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simpler-way-to-boost-flutter-performance-with-dart-ffi.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/hetzner-load-balancers-vs-a-simple-haproxy-setup.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-way-to-manage-rails-secrets.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-guide-to-django-rest-framework-serializers.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/when-to-use-django-signals-and-when-to-avoid-them.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-simple-magic-of-ssh-port-forwarding.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/adding-storage-on-hetzner-volumes-vs-storage-boxes.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-start-to-testing-in-django.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-job-scorecard.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-guide-to-postgresql-index-types.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-pattern-for-scalable-flutter-ui.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-guide-to-systemd-for-developers.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-hardest-conversation.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-reverse-proxy-for-your-hetzner-server.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/how-to-stop-useless-widget-rebuilds-in-flutter.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/how-to-upgrade-a-legacy-rails-application.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-founder-s-bottleneck.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-customer-conversation-that-builds-your-product.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/keeping-your-flutter-ui-smooth-with-isolates.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-pattern-for-django-settings.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/building-modern-frontends-without-a-javascript-framework.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://banerjeerishi.com/text/the-first-30-days-a-simple-onboarding-plan.html</loc>
     <lastmod>2025-09-25</lastmod>
     <priority>0.80</priority>
@@ -308,11 +433,6 @@
   <url>
     <loc>https://banerjeerishi.com/text/index.html</loc>
     <lastmod>2023-08-06</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://banerjeerishi.com/text/detachment.html</loc>
-    <lastmod>2022-06-06</lastmod>
     <priority>0.80</priority>
   </url>
 </urlset>
