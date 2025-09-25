@@ -42,6 +42,50 @@ Engineering at a startup, I spend my spare hours building small games and side p
   * [Why Choose Django as a Startup?](https://banerjeerishi.com/text/why-choose-django-as-a-startup.html)
   * [Rails really packs a punch](https://banerjeerishi.com/text/rails-really-packs-a-punch.html) — I'm a huge Django enthusiast myself, but I've got to admit, Rails offers a level of comprehensiveness that Django just doesn't match. The only thing keeping me anchored to Django is my preference for Python over DHH Lang (also known as Ruby)
 
+### Essays
+
+* [The First 30 Days: A Simple Onboarding Plan](https://banerjeerishi.com/text/the-first-30-days-a-simple-onboarding-plan.html)
+* [Using Hetzner's Free Firewall Instead of UFW](https://banerjeerishi.com/text/using-hetzners-free-firewall-instead-of-ufw.html)
+* [The Source of Unhappiness Is a Simple Mistake](https://banerjeerishi.com/text/the-source-of-unhappiness-is-a-simple-mistake.html)
+* [Rethinking Rails Views with ViewComponents](https://banerjeerishi.com/text/rethinking-rails-views-with-viewcomponents.html)
+* [How to Pay Your First Ten Employees](https://banerjeerishi.com/text/how-to-pay-your-first-ten-employees.html)
+* [Simple Encrypted Backups on Hetzner with Restic](https://banerjeerishi.com/text/simple-encrypted-backups-on-hetzner-with-restic.html)
+* [The Easiest Way to Find and Fix N+1 Queries in Rails](https://banerjeerishi.com/text/the-easiest-way-to-find-and-fix-n1-queries-in-rails.html)
+* [Action Without Attachment](https://banerjeerishi.com/text/action-without-attachment.html)
+* [Securing Your New Hetzner Server: The First Hour](https://banerjeerishi.com/text/securing-your-new-hetzner-server-the-first-hour.html)
+* [The Practice of the Unattached Observer](https://banerjeerishi.com/text/the-practice-of-the-unattached-observer.html)
+* [Hetzner Private Networking The Simple Way](https://banerjeerishi.com/text/hetzner-private-networking-the-simple-way.html)
+* [Start Every Django Project with a Custom User Model](https://banerjeerishi.com/text/start-every-django-project-with-a-custom-user-model.html)
+* [A Simple Guide to Django Middleware](https://banerjeerishi.com/text/a-simple-guide-to-django-middleware.html)
+* [Debugging Connections with Simple Linux Tools](https://banerjeerishi.com/text/debugging-connections-with-simple-linux-tools.html)
+* [When Your Django App Gets Too Big](https://banerjeerishi.com/text/when-your-django-app-gets-too-big.html)
+* [Finding Your Dharma Is Not a Treasure Hunt](https://banerjeerishi.com/text/finding-your-dharma-is-not-a-treasure-hunt.html)
+* [How to Think About Caching in Rails](https://banerjeerishi.com/text/how-to-think-about-caching-in-rails.html)
+* [Finding the Self by Subtraction](https://banerjeerishi.com/text/finding-the-self-by-subtraction.html)
+* [Moving a Big Database Without Breaking Things](https://banerjeerishi.com/text/moving-a-big-database-without-breaking-things.html)
+* [The Mind's Three Modes](https://banerjeerishi.com/text/the-minds-three-modes.html)
+* [The One Page Product Spec](https://banerjeerishi.com/text/the-one-page-product-spec.html)
+* [The Three Signs You Aren't Ready to Hire](https://banerjeerishi.com/text/the-three-signs-you-arent-ready-to-hire.html)
+* [Why Your Rails Tests Are Slow](https://banerjeerishi.com/text/why-your-rails-tests-are-slow.html)
+* [Stop Stashing: A Better Git Workflow with Worktrees](https://banerjeerishi.com/text/stop-stashing-a-better-git-workflow-with-worktrees.html)
+* [The Illusion of Being the Doer](https://banerjeerishi.com/text/the-illusion-of-being-the-doer.html)
+* [The Minimalist Hiring Loop](https://banerjeerishi.com/text/the-minimalist-hiring-loop.html)
+* [Stop Stashing, A Better Git Workflow with Worktrees](https://banerjeerishi.com/text/stop-stashing-a-better-git-workflow-with-worktrees.html)
+* [Git's Magic Undo Button: Recovering Lost Commits](https://banerjeerishi.com/text/gits-magic-undo-button-recovering-lost-commits.html)
+* [A Simple Guide to PostgreSQL EXPLAIN ANALYZE](https://banerjeerishi.com/text/a-simple-guide-to-postgresql-explain-analyze.html)
+* [Find Bugs Fast with Git Bisect](https://banerjeerishi.com/text/find-bugs-fast-with-git-bisect.html)
+* [Hetzner Cloud vs Dedicated: A Guide to Saving Money](https://banerjeerishi.com/text/hetzner-cloud-vs-dedicated-a-guide-to-saving-money.html)
+* [When Rails Models Get Too Big](https://banerjeerishi.com/text/when-rails-models-get-too-big.html)
+* [A Simple Workflow for Clean Git History](https://banerjeerishi.com/text/a-simple-workflow-for-clean-git-history.html)
+* [A Practical Guide to PostgreSQL Backups](https://banerjeerishi.com/text/a-practical-guide-to-postgresql-backups.html)
+* [Deciding What to Build Next](https://banerjeerishi.com/text/deciding-what-to-build-next.html)
+* [Calling Native Code from Flutter Is Easier Than You Think](https://banerjeerishi.com/text/calling-native-code-from-flutter-is-easier-than-you-think.html)
+* [Why Most Rails Apps Get Background Jobs Wrong](https://banerjeerishi.com/text/why-most-rails-apps-get-background-jobs-wrong.html)
+* [A Simple Fix for Slow Django Queries](https://banerjeerishi.com/text/a-simple-fix-for-slow-django-queries.html)
+* [Build Fast Lists in Flutter](https://banerjeerishi.com/text/build-fast-lists-in-flutter.html)
+* [Your First Engineer](https://banerjeerishi.com/text/your-first-engineer.html)
+
+
 ## Social
 
 * [Github](https://github.com/rshrc)
@@ -53,7 +97,6 @@ Engineering at a startup, I spend my spare hours building small games and side p
 
 * [Joseph and the Amazing Technicolor Dreamcoat](https://www.youtube.com/watch?v=CVfCU8UM7Dw&t=3720s&pp=ygUhc3BzIDEyNSB5ZWFycyBjZWxlYnJhdGlvbiBhc2Fuc29s) - I was the pharoah 
 
-  
 ## Music Taste
 
 * [Breaking Benjamin](https://open.spotify.com/playlist/37i9dQZF1DZ06evO3iBwVq?si=16e1f990c0ee474e) 

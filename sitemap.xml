@@ -2,112 +2,317 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://banerjeerishi.com/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
+    <loc>https://banerjeerishi.com/text/the-first-30-days-a-simple-onboarding-plan.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/using-hetzner-s-free-firewall-instead-of-ufw.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-source-of-unhappiness-is-a-simple-mistake.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/rethinking-rails-views-with-viewcomponents.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/how-to-pay-your-first-ten-employees.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/simple-encrypted-backups-on-hetzner-with-restic.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-easiest-way-to-find-and-fix-n-1-queries-in-rails.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/action-without-attachment.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/securing-your-new-hetzner-server-the-first-hour.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-practice-of-the-unattached-observer.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/hetzner-private-networking-the-simple-way.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/start-every-django-project-with-a-custom-user-model.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-guide-to-django-middleware.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/debugging-connections-with-simple-linux-tools.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/when-your-django-app-gets-too-big.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/finding-your-dharma-is-not-a-treasure-hunt.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/how-to-think-about-caching-in-rails.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/finding-the-self-by-subtraction.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/moving-a-big-database-without-breaking-things.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-mind-s-three-modes.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-one-page-product-spec.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-three-signs-you-aren-t-ready-to-hire.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/why-your-rails-tests-are-slow.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-illusion-of-being-the-doer.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/the-minimalist-hiring-loop.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/stop-stashing-a-better-git-workflow-with-worktrees.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/git-s-magic-undo-button-recovering-lost-commits.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-guide-to-postgresql-explain-analyze.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/find-bugs-fast-with-git-bisect.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/hetzner-cloud-vs-dedicated-a-guide-to-saving-money.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/when-rails-models-get-too-big.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-workflow-for-clean-git-history.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-practical-guide-to-postgresql-backups.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/deciding-what-to-build-next.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/calling-native-code-from-flutter-is-easier-than-you-think.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/why-most-rails-apps-get-background-jobs-wrong.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/a-simple-fix-for-slow-django-queries.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/build-fast-lists-in-flutter.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/your-first-engineer.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://banerjeerishi.com/text/a-city-i-so-loved.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/accepting-god.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/ballad-of-canker-sores.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/easy-crontab-with-celery-beat.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/functional-error-handling-in-flutter.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/helgoland.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/historical-records-in-django.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/holy-mother.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/in-the-hours-of-meditation.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/proof-of-god.html</loc>
-    <lastmod>2025-09-14</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://banerjeerishi.com/text/rails-8-kamal-2-on-digital-ocean-with-managed-db.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/rails-really-packs-a-punch.html</loc>
-    <lastmod>2025-09-14</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://banerjeerishi.com/text/raspberry-pi-4-hotspot.html</loc>
-    <lastmod>2025-09-14</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://banerjeerishi.com/text/remote-office-not-required.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/setting-up-django-with-docker-compose-orbstack.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/shobashona-s-boti.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/the-gospel-of-sri-ramakrishna.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/why-i-chose-vim.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/why-choose-django-as-a-startup.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/why-do-we-suffer.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/writing-a-scheduler-using-django-and-celerybeat-crontab.html</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2024-07-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/rails-8-kamal-2-on-digital-ocean-with-managed-db.html</loc>
+    <lastmod>2024-04-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/remote-office-not-required.html</loc>
+    <lastmod>2024-04-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/raspberry-pi-4-hotspot.html</loc>
+    <lastmod>2023-09-11</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/index.html</loc>
+    <lastmod>2023-08-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/detachment.html</loc>
+    <lastmod>2022-06-06</lastmod>
     <priority>0.80</priority>
   </url>
 </urlset>

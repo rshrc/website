@@ -30,3 +30,5 @@ node_modules/
 markdowns/
 txt-samples/
 src/text/pages/
+blog/
+sitemap.xml.bak*
