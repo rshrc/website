@@ -85,6 +85,7 @@
         font-family: Times, Georgia, serif;
         background: var(--bg);
         color: var(--fg);
+        transition: background-color 220ms ease, color 220ms ease;
       }
 
       h1, h2 {
@@ -126,6 +127,7 @@
       a, abbr {
         text-decoration: none;
         color: var(--link);
+        transition: color 220ms ease;
       }
 
       .theme-toggle {
@@ -139,15 +141,25 @@
         height: 2rem;
         padding: 0;
         cursor: pointer;
+        position: relative;
+        transition: border-color 220ms ease, color 220ms ease, transform 180ms ease;
       }
-
-      .theme-toggle .icon-sun { display: inline-block; }
-      .theme-toggle .icon-moon { display: none; }
-      :root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
-      :root[data-theme="dark"] .theme-toggle .icon-moon { display: inline-block; }
+      .theme-toggle:hover { transform: translateY(-1px); }
+      .theme-toggle i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.92);
+        opacity: 0;
+        transition: opacity 180ms ease, transform 220ms ease;
+      }
+      .theme-toggle .icon-sun { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      .theme-toggle .icon-moon { opacity: 0; }
+      :root[data-theme="dark"] .theme-toggle .icon-sun { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
+      :root[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; transform: translate(-50%, -50%) scale(1); }
       @media (prefers-color-scheme: dark) {
-        :root:not([data-theme]) .theme-toggle .icon-sun { display: none; }
-        :root:not([data-theme]) .theme-toggle .icon-moon { display: inline-block; }
+        :root:not([data-theme]) .theme-toggle .icon-sun { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
+        :root:not([data-theme]) .theme-toggle .icon-moon { opacity: 1; transform: translate(-50%, -50%) scale(1); }
       }
 
       img {
@@ -164,6 +176,7 @@
       .footer {
         margin-top: 3em;
         border-top: 5px solid var(--rule);
+        transition: border-color 220ms ease;
       }
 
       .rishi-portrait {
