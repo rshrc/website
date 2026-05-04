@@ -83,8 +83,7 @@ void main(List<String> args) {
     );
 
     final baseUrl = Uri.parse('https://banerjeerishi.com');
-
-    final blogUrl = Uri.parse('${baseUrl}/text');
+    final blogUrl = baseUrl.resolve('/text/');
     var fullUrl = blogUrl.resolve(htmlFileName);
 
     // Remove and parse front-matter.
@@ -130,17 +129,7 @@ void main(List<String> args) {
       exitCode = 1;
       continue;
     }
-
-    // Generate appropriate JSON-LD schema
-    var jsonLdString = filename == 'index'
-        ? _generatePersonJsonLd()
-        : _generateArticleJsonLd(
-            title: title,
-            description: description,
-            url: fullUrl.toString(),
-            socialImage: socialImage,
-            date: created,
-          );
+    final createdIso = _isoDateFormat.format(created.toUtc());
 
     var obsidianEmbeds = <ObsidianEmbed>[];
     // Take the Markdown with Obsidian-specific notation
@@ -159,6 +148,19 @@ void main(List<String> args) {
       obsidianEmbeds.add(embed);
       return embed.asHtml;
     });
+    final articleWordCount = _countWords(mdSourceGeneric);
+
+    // Generate appropriate JSON-LD schema
+    var jsonLdString = filename == 'index'
+        ? _generatePersonJsonLd()
+        : _generateArticleJsonLd(
+            title: title,
+            description: description,
+            url: fullUrl.toString(),
+            socialImage: socialImage,
+            date: created,
+            wordCount: articleWordCount,
+          );
 
     var htmlSource = md.markdownToHtml(
       mdSourceGeneric,
@@ -220,6 +222,7 @@ void main(List<String> args) {
             _attributeEscape.convert(description))
         .replaceAll('GENERATED_SOCIAL_IMAGE_ESCAPED',
             _attributeEscape.convert(socialImage))
+        .replaceAll('GENERATED_CREATED_ISO', createdIso)
         .replaceAll('<!-- GENERATED_DATE -->', date);
 
     var htmlFilePath = path.join(outputDirectoryPath, htmlFileName);
@@ -310,38 +313,18 @@ class ObsidianEmbed {
             "Unimplemented: dimensions of an obsidian embed");
 }
 
-String _sanitizeFilename(String input, {String replacement = ''}) {
-  final result = input
-      // illegalRe
-      .replaceAll(
-        RegExp(r'[\/\?<>\\:\*\|"]'),
-        replacement,
-      )
-      // replace single and curly quotes with nothing
-      .replaceAll(RegExp(r"[\'’]"), replacement)
-      // controlRe
-      .replaceAll(
-        RegExp(r'[\x00-\x1f\x80-\x9f]'),
-        replacement,
-      )
-      // reservedRe
-      .replaceFirst(RegExp(r'^\.+$'), replacement)
-      // windowsReservedRe
-      .replaceFirst(
-        RegExp(r'^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$',
-            caseSensitive: false),
-        replacement,
-      )
-      // windowsTrailingRe
-      .replaceFirst(RegExp(r'[\. ]+$'), replacement)
-      // Spaces → dash
-      .replaceAll(' ', '-')
-      // Collapse multiple dashes
+String _sanitizeFilename(String input) {
+  final slug = input
+      .toLowerCase()
+      // apostrophes don't carry useful slug information
+      .replaceAll(RegExp(r"[\'’]"), '')
+      // anything non-alphanumeric becomes a separator
+      .replaceAll(RegExp(r'[^a-z0-9]+'), '-')
       .replaceAll(_severalDashes, '-')
-      // Lowercase
-      .toLowerCase();
+      .replaceAll(RegExp(r'^-+|-+$'), '');
 
-  return result.length > 255 ? result.substring(0, 255) : result;
+  if (slug.isEmpty) return 'untitled';
+  return slug.length > 255 ? slug.substring(0, 255) : slug;
 }
 
 final DateFormat _isoDateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss.mmm000Z');
@@ -500,23 +483,32 @@ String _generateArticleJsonLd({
   required String url,
   required String socialImage,
   required DateTime date,
+  required int wordCount,
 }) {
   final isoDate = _isoDateFormat.format(date.toUtc());
-  
+
   // Generate contextual keywords based on title content
   var contextualKeywords = <String>[];
   var titleLower = title.toLowerCase();
-  
-  if (titleLower.contains('django')) contextualKeywords.addAll(['Django', 'Python', 'web framework', 'backend']);
-  if (titleLower.contains('rails')) contextualKeywords.addAll(['Ruby on Rails', 'Ruby', 'web development']);
-  if (titleLower.contains('vim')) contextualKeywords.addAll(['Vim', 'text editor', 'productivity', 'development tools']);
-  if (titleLower.contains('python')) contextualKeywords.addAll(['Python programming', 'backend development']);
-  if (titleLower.contains('celery')) contextualKeywords.addAll(['Celery', 'task queue', 'async processing']);
-  if (titleLower.contains('docker')) contextualKeywords.addAll(['Docker', 'containerization', 'DevOps']);
-  if (titleLower.contains('startup')) contextualKeywords.addAll(['startup', 'entrepreneurship', 'business']);
-  
+
+  if (titleLower.contains('django'))
+    contextualKeywords.addAll(['Django', 'Python', 'web framework', 'backend']);
+  if (titleLower.contains('rails'))
+    contextualKeywords.addAll(['Ruby on Rails', 'Ruby', 'web development']);
+  if (titleLower.contains('vim'))
+    contextualKeywords
+        .addAll(['Vim', 'text editor', 'productivity', 'development tools']);
+  if (titleLower.contains('python'))
+    contextualKeywords.addAll(['Python programming', 'backend development']);
+  if (titleLower.contains('celery'))
+    contextualKeywords.addAll(['Celery', 'task queue', 'async processing']);
+  if (titleLower.contains('docker'))
+    contextualKeywords.addAll(['Docker', 'containerization', 'DevOps']);
+  if (titleLower.contains('startup'))
+    contextualKeywords.addAll(['startup', 'entrepreneurship', 'business']);
+
   var allKeywords = ['Rishi Banerjee', title, ...contextualKeywords].join(', ');
-  
+
   return '''
 <script type="application/ld+json">
 {
@@ -553,7 +545,7 @@ String _generateArticleJsonLd({
   },
   "keywords": "${_attributeEscape.convert(allKeywords)}",
   "articleSection": "Technology",
-  "wordCount": 1000,
+  "wordCount": $wordCount,
   "commentCount": 0,
   "speakable": {
     "@type": "SpeakableSpecification",
@@ -562,6 +554,15 @@ String _generateArticleJsonLd({
 }
 </script>
 ''';
+}
+
+int _countWords(String markdown) {
+  final normalized = markdown
+      .replaceAll(RegExp(r'[`*_#>\[\]\(\)!~\-]'), ' ')
+      .replaceAll(RegExp(r'\s+'), ' ')
+      .trim();
+  if (normalized.isEmpty) return 0;
+  return normalized.split(' ').length;
 }
 
 /// Splits file [content] into [frontMatter] and [markdown].

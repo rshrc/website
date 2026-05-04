@@ -1,19 +1,19 @@
 clean:
 	rm -rf ./build
 
-run: builder
-	serve -s build -l 3000
+run:
+	ruby tool/dev_server
 
 deploy: builder
 		firebase deploy
 		echo "Visit @ https://banerjeerishi.com"
 
-builder: copy_web htmlgen
+builder: copy_web booksgen htmlgen
 
 
 copy_web: spanify
 	mkdir -p build
-	cp -R ./web/* ./build
+	cp -R ./web/. ./build
 	cp sitemap.xml build/
 	cp robots.txt build/
 
@@ -21,10 +21,23 @@ copy_old:
 	cp -R ./old/* ./build
 
 spanify:
-	dart --enable-asserts tool/spanify.dart \
-	  --html src/index.template.html \
-	  src/index.md \
-	  > web/index.html
+	ruby tool/site_tasks spanify
 
 htmlgen:
-	dart --enable-asserts tool/htmlgen.dart
+	ruby tool/site_tasks htmlgen
+
+booksgen:
+	ruby tool/site_tasks booksgen
+
+check-sitemap-urls: builder
+	ruby tool/site_tasks check-sitemap-urls
+
+update-sitemap:
+	ruby tool/site_tasks update-sitemap
+
+r: run
+s: spanify
+g: htmlgen
+b: booksgen
+u: update-sitemap
+c: check-sitemap-urls

@@ -106,10 +106,16 @@ Engineering at a startup, I spend my spare hours building small games and side p
 * [A Simple Fix for Slow Django Queries](https://banerjeerishi.com/text/a-simple-fix-for-slow-django-queries.html)
 * [Build Fast Lists in Flutter](https://banerjeerishi.com/text/build-fast-lists-in-flutter.html)
 * [Your First Engineer](https://banerjeerishi.com/text/your-first-engineer.html)
+
+## Favorite Books
+
+* [2023](/books/2023.html)
+* [2024](/books/2024.html)
+* [2025](/books/2025.html)
+* [2026](/books/2026.html)
 ## Social
 
 * [Github](https://github.com/rshrc)
-* [LinkedIn](https://www.linkedin.com/in/rishibanerjee21/)
 * [StackOverflow](https://stackoverflow.com/users/8028903/deprecatedapi)
 * rishi.banerjee1009<span style="display:none">deletethisifyourenotarobot</span>@gmail<span style="display:none">thisaswell</span>.com
 

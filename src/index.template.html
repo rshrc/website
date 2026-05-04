@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
-
     <meta charset="utf-8">
-    <title>Rishi's homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rishi Banerjee | Entrepreneur, Engineer & Writer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="canonical" href="https://banerjeerishi.com/">
     <link rel="alternate" type="application/atom+xml" title="Rishi Banerjee’s Texts" href="https://banerjeerishi.com/text/atom.xml" />
@@ -17,16 +17,16 @@
     <meta property="og:title" content="Rishi Banerjee | Entrepreneur, Engineer & Writer">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://banerjeerishi.com/">
-    <meta property="og:description" content="Rishi is a full time entrepreneur and a part time philosopher">
+    <meta property="og:description" content="Official site of Rishi Banerjee - entrepreneur, software engineer, and writer. Insights on Rails, Django, Flutter, startups, and philosophy.">
     <meta property="og:image" content="https://banerjeerishi.com/img/share-image.png">
+    <meta property="og:image:alt" content="Portrait of Rishi Banerjee">
     <meta property="og:site_name" content="Rishi Banerjee">
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@realRishiB">
-    <meta name="twitter:title" content="Rishi Banerjee">
-    <meta name="twitter:description" content="Rishi is a full time entrepreneur and a part time philosopher">
-    <meta name="twitter:image" content="https://banerjeerishi.com/img/share-image.png">
+    <meta name="twitter:title" content="Rishi Banerjee | Entrepreneur, Engineer & Writer">
+    <meta name="twitter:description" content="Official site of Rishi Banerjee - entrepreneur, software engineer, and writer. Insights on Rails, Django, Flutter, startups, and philosophy.">
     <meta name="twitter:image" content="https://banerjeerishi.com/img/share-image.png">
     <meta name="twitter:image:alt" content="Portrait of Rishi Banerjee">
 
@@ -42,10 +42,6 @@
     <meta itemprop="url" content="https://banerjeerishi.com/">
     <meta itemprop="gender" content="Male">
     <meta itemprop="honorificPrefix" content="Mgr.">
-
-    <meta name="robots" content="all" />
-   
-    <meta name="author" content="Rishi Banerjee" />
 
     <!-- JSON-LD Person Schema -->
     <script type="application/ld+json">
@@ -92,19 +88,59 @@
     </script>
 
     <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #111111;
+        --link: #0b57d0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111111;
+          --fg: #e6e6e6;
+          --link: #8ab4f8;
+        }
+      }
+      :root[data-theme="light"] {
+        --bg: #ffffff;
+        --fg: #111111;
+        --link: #0b57d0;
+      }
+      :root[data-theme="dark"] {
+        --bg: #111111;
+        --fg: #e6e6e6;
+        --link: #8ab4f8;
+      }
+
       .wrapper {
         max-width: 600px;
         margin: 0 auto;
         padding: 5vw;
+        position: relative;
       }
 
       body {
         font-family: Times, Georgia, serif;
+        background: var(--bg);
+        color: var(--fg);
       }
 
       h1, h2 {
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         font-weight: normal;
+      }
+
+      .title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .theme-toggle-wrap {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
       }
 
       h2 {
@@ -127,6 +163,29 @@
 
       a, abbr {
         text-decoration: none;
+        color: var(--link);
+      }
+
+      .theme-toggle {
+        border: 1px solid var(--fg);
+        background: transparent;
+        color: var(--fg);
+        border-radius: 999px;
+        font-size: 0.8rem;
+        line-height: 1;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .theme-toggle .icon-sun { display: inline-block; }
+      .theme-toggle .icon-moon { display: none; }
+      :root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+      :root[data-theme="dark"] .theme-toggle .icon-moon { display: inline-block; }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) .theme-toggle .icon-sun { display: none; }
+        :root:not([data-theme]) .theme-toggle .icon-moon { display: inline-block; }
       }
 
       .portrait {
@@ -161,10 +220,48 @@
   </head>
   <body>
     <div class="wrapper">
-      <h1>Rishi Banerjee </h1>
+      <div class="theme-toggle-wrap">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
+          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="title-row">
+        <h1>Rishi Banerjee</h1>
+      </div>
 
       <!-- GENERATED HTML -->
 
     </div>
+    <script>
+      (function () {
+        var key = 'theme';
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+
+        function apply(theme) {
+          if (theme === 'light' || theme === 'dark') {
+            root.setAttribute('data-theme', theme);
+          } else {
+            root.removeAttribute('data-theme');
+          }
+        }
+
+        function current() {
+          return localStorage.getItem(key);
+        }
+
+        var saved = current();
+        apply(saved);
+
+        btn.addEventListener('click', function () {
+          var now = root.getAttribute('data-theme');
+          var next = now === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(key, next);
+          apply(next);
+        });
+      })();
+    </script>
   </body>
 </html>

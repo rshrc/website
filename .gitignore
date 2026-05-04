@@ -32,3 +32,5 @@ txt-samples/
 src/text/pages/
 blog/
 sitemap.xml.bak*
+src/books/
+web/books/

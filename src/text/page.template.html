@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>GENERATED_TITLE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="alternate" type="application/atom+xml" title="Rishi Banerjee's Texts" href="https://banerjeerishi.com/text/atom.xml" />
 
@@ -16,6 +17,8 @@
     <meta property="og:site_name" content="Rishi Banerjee">
     <meta property="og:locale" content="en_US">
     <meta property="article:author" content="https://banerjeerishi.com">
+    <meta property="article:published_time" content="GENERATED_CREATED_ISO">
+    <meta property="article:modified_time" content="GENERATED_CREATED_ISO">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@realRishiB">
@@ -42,20 +45,64 @@
     <!-- GENERATED_JSON_LD -->
 
     <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #111111;
+        --link: #0b57d0;
+        --rule: #808080;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111111;
+          --fg: #e6e6e6;
+          --link: #8ab4f8;
+          --rule: #5f6368;
+        }
+      }
+      :root[data-theme="light"] {
+        --bg: #ffffff;
+        --fg: #111111;
+        --link: #0b57d0;
+        --rule: #808080;
+      }
+      :root[data-theme="dark"] {
+        --bg: #111111;
+        --fg: #e6e6e6;
+        --link: #8ab4f8;
+        --rule: #5f6368;
+      }
+
       .wrapper {
         max-width: 600px;
         margin: 0 auto;
         padding: 5vw;
+        position: relative;
       }
 
       body {
         font-family: Times, Georgia, serif;
+        background: var(--bg);
+        color: var(--fg);
       }
 
       h1, h2 {
         font-family: "Helvetica Neue", Helvetica, sans-serif;
         text-wrap: normal;
         
+      }
+
+      .title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .theme-toggle-wrap {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
       }
 
       h2 {
@@ -78,6 +125,29 @@
 
       a, abbr {
         text-decoration: none;
+        color: var(--link);
+      }
+
+      .theme-toggle {
+        border: 1px solid var(--fg);
+        background: transparent;
+        color: var(--fg);
+        border-radius: 999px;
+        font-size: 0.8rem;
+        line-height: 1;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .theme-toggle .icon-sun { display: inline-block; }
+      .theme-toggle .icon-moon { display: none; }
+      :root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+      :root[data-theme="dark"] .theme-toggle .icon-moon { display: inline-block; }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) .theme-toggle .icon-sun { display: none; }
+        :root:not([data-theme]) .theme-toggle .icon-moon { display: inline-block; }
       }
 
       img {
@@ -93,7 +163,7 @@
 
       .footer {
         margin-top: 3em;
-        border-top: 5px solid gray;
+        border-top: 5px solid var(--rule);
       }
 
       .rishi-portrait {
@@ -125,8 +195,16 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="theme-toggle-wrap">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
+          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
+        </button>
+      </div>
 
-      <h1>GENERATED_TITLE</h1>
+      <div class="title-row">
+        <h1>GENERATED_TITLE</h1>
+      </div>
 
       <!-- GENERATED_HTML -->
 
@@ -142,5 +220,23 @@
         <!-- <p><small><a href="https://banerjeerishi.com/text/atom.xml">RSS</a></small></p> -->
       </div>
     </div>
+    <script>
+      (function () {
+        var key = 'theme';
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        function apply(theme) {
+          if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+          else root.removeAttribute('data-theme');
+        }
+        apply(localStorage.getItem(key));
+        btn.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(key, next);
+          apply(next);
+        });
+      })();
+    </script>
   </body>
 </html>

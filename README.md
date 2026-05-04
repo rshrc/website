@@ -8,18 +8,41 @@ Check out the original project [here](https://github.com/filiph/filiphnet).
 
 Code for Rishi's personal homepage.
 
-Use `make` to build and deploy this. For example:
+Use `make` to build and serve this. For example:
 
 ```
-$ make serve
+$ make run
 ```
 
-This will build the project and will serve it on localhost.
+This starts a watch server on `http://localhost:3002` and rebuilds on file changes.
 
 To deploy:
 
 ```
 $ make deploy
+```
+
+## Consolidated local tooling
+
+Utility scripts are consolidated under `tool/site_tasks`:
+
+```bash
+ruby tool/site_tasks spanify
+ruby tool/site_tasks htmlgen
+ruby tool/site_tasks booksgen
+ruby tool/site_tasks update-sitemap
+ruby tool/site_tasks check-sitemap-urls
+```
+
+Shortcuts:
+
+```bash
+make r   # run watch server
+make s   # spanify
+make g   # htmlgen
+make b   # books pages from markdown
+make u   # update sitemap
+make c   # check sitemap URLs
 ```
 
 ## Write new articles
