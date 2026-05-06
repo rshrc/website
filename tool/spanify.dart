@@ -80,8 +80,8 @@ String _buildCss() {
 String _buildKeyframes(int i) {
   return '''
         @keyframes appear$i {
-        0% {color: white;}
-        ${i + 2}% {color: white;}
+        0% {color: var(--bg);}
+        ${i + 2}% {color: var(--bg);}
         ${i + 30}% {color: inherit;}
       }
   '''
