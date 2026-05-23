@@ -5,7 +5,10 @@
      srcset="img/profile.jpg 1x, img/profile@2x.jpg 2x, img/profile@3x.jpg 3x, img/profile@4x.jpg 4x"
      alt="Rishi's face">
      
-Engineering at a startup, I spend my spare hours building small games and side projects. I read stories and philosophy, write short pieces on the side, and I’m exploring the craft of filmmaking, mostly thinking. I’m big on proper meals, strong coffee, and Vim shortcuts. Based in Bengaluru.
+Building software, products, and small experiments. My work spans startup engineering, backend systems, internal tools, and independent projects. Working remotely from different places, with Bengaluru as a city I return to from time to time. Outside code, I love good books and poems, philosophy, occasional writing, filmmaking, proper meals, and strong coffee.
+
+> Life is short; opportunity fleeting; experiment perilous; judgement flawed.  
+> — Hippocrates
 
 ## Gigs & Projects
 
@@ -125,6 +128,8 @@ Engineering at a startup, I spend my spare hours building small games and side p
 
 ## Music Taste
 
+This is the collection where I list the ones that "I" find unconventional. Which means; Michael, Elvis, Coldplay and many more of the obvious artists make the list. 
+
 * [Breaking Benjamin](https://open.spotify.com/playlist/37i9dQZF1DZ06evO3iBwVq?si=16e1f990c0ee474e) 
   - Favorite Album [Phobia](https://open.spotify.com/album/6yJdQMlMkfYJFiSsL6764c?si=45d70faf4b364974)
 * [Foo Fighters](https://foofighters.com/) go buy some merch
@@ -137,6 +142,13 @@ Engineering at a startup, I spend my spare hours building small games and side p
 * [B.B. King](https://open.spotify.com/artist/5xLSa7l4IV1gsQfhAMvl0U?si=790df151fda7468e) is always gonna make the list :)
 * [Sound City - Reel to Reel](https://open.spotify.com/album/066mZjq57UkWDAM7A6PWce?si=ddf7eb5c38bd4d3f) you need to listen to this album, if born as a mortal on this mortal earth, for the love of God!
 * [Porcupine Tree](https://open.spotify.com/artist/5NXHXK6hOCotCF8lvGM1I0?si=dbe077a1f22d4655) this band requires so much more attention, Steven Wilson is literally a living God of Music. A college senior recommended this to me, and I am thankful to her wherever she is!
+* [Age of Aquarius](https://open.spotify.com/album/6qvEBNlB4rS4trNxuP2gAe?si=43067fc12d8a4206) 
+* [Hulo](https://open.spotify.com/artist/0VmqJsRLRKbPBh9ZgnBzdB?si=ddaa9b1817ef4fe3) a really good indie artist
+* [Radiohead](https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb?si=08199a46d02949ca) Erlich Bachman can hate them, I can't
+* [Ozzy Osbourne](https://open.spotify.com/artist/6ZLTlhejhndI4Rh53vYhrY?si=06f62eb6439c444c) RIP
+* [Killer Mike](https://open.spotify.com/artist/2N4EYkIlG1kv25g6Wv8LGI?si=d7bd9bca8e8d435e) taken out of RTJ
+* [Danzig](https://open.spotify.com/artist/34c4iQ5tkaZKu6Sv28BTde?si=oC47EsF9RheiyIVvEEHw2w) "MOTHER"
+* [Alter Bridge](https://open.spotify.com/album/0Fk4lWAADmFMmuW6jp6xyE?si=f98756699180488a) Great for emotional gym workouts
 
 ## About this page
 
