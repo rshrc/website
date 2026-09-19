@@ -3,7 +3,7 @@
      height="233"
      src="img/profile.jpg" 
      srcset="img/profile.jpg 1x, img/profile@2x.jpg 2x, img/profile@3x.jpg 3x, img/profile@4x.jpg 4x"
-     alt="Rishi's face">
+     alt="Rishi on a beach, sunglasses on, hair doing whatever it wants">
      
 I build software, wherever I happen to be. Bengaluru keeps getting me back. Something about the air there, the rain that turns up in the evening and nobody minds.
 
