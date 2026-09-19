@@ -1,108 +1,52 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'time'
-require 'fileutils'
+# Rewrites sitemap.xml from the articles in markdowns/, newest first, keeping
+# a timestamped backup of the old one. An article's date is its front matter
+# `created`, or the file's modified time when that's missing.
 
-ROOT = File.expand_path('..', __dir__)
-MARKDOWN_DIR = File.join(ROOT, 'markdowns')
-SITEMAP_OUT = File.join(ROOT, 'sitemap.xml')
-SITE_PREFIX = 'https://banerjeerishi.com/text'
+require "fileutils"
+require "time"
+require_relative "lib/site"
 
+MARKDOWNS = Site.path("markdowns")
+SITEMAP   = Site.path("sitemap.xml")
 
-def slugify(text)
-  slug = text.downcase
-             .gsub(/[\'’]/, '')
-             .gsub(/[^a-z0-9]+/, '-')
-             .gsub(/-+/, '-')
-             .gsub(/\A-|\-\z/, '')
-  slug.empty? ? 'untitled' : slug
+def created(file)
+  lines = file.readlines(encoding: "utf-8")
+  return unless lines.first&.strip == "---"
+
+  value = lines.drop(1).take_while { _1.strip != "---" }
+               .filter_map { _1[/^\s*created\s*:\s*(.+)$/i, 1] }.first&.strip&.gsub(/\A['"]|['"]\z/, "")
+  Time.parse(value).utc if value && !value.empty?
+rescue ArgumentError
+  nil
 end
 
-
-def parse_frontmatter_created(path)
-  lines = File.readlines(path, encoding: 'utf-8')
-  return nil if lines.empty? || lines[0].strip != '---'
-
-  created_value = nil
-  lines[1..].each do |line|
-    break if line.strip == '---'
-    if (m = line.match(/^\s*created\s*:\s*(.+)$/i))
-      created_value = m[1].strip.gsub(/\A['\"]|['\"]\z/, '')
-      break
-    end
-  end
-
-  return nil if created_value.nil? || created_value.empty?
-
-  begin
-    Time.parse(created_value).utc
-  rescue StandardError
-    nil
-  end
+def url(loc, date, priority)
+  ["  <url>", "    <loc>#{loc}</loc>", "    <lastmod>#{date.strftime("%Y-%m-%d")}</lastmod>",
+   "    <priority>#{priority}</priority>", "  </url>"]
 end
 
-
-def file_lastmod(path)
-  File.mtime(path).utc
-end
-
-
-def build_entries
-  entries = []
-  Dir.children(MARKDOWN_DIR).sort.each do |name|
-    path = File.join(MARKDOWN_DIR, name)
-    next unless File.file?(path) && File.extname(path).downcase == '.md'
-
-    slug = slugify(File.basename(name, '.md'))
-    created = parse_frontmatter_created(path) || file_lastmod(path)
-    entries << [created, slug]
-  end
-  entries
-end
-
-
-def backup_sitemap(path)
-  return unless File.exist?(path)
-
-  ts = Time.now.utc.strftime('%Y%m%dT%H%M%SZ')
-  bak = "#{path}.bak.#{ts}"
-  FileUtils.cp(path, bak)
-  puts "Backed up existing sitemap to #{bak}"
-end
-
-
-def write_sitemap(entries)
-  backup_sitemap(SITEMAP_OUT)
-
-  entries_sorted = entries.sort_by { |entry| -entry[0].to_i }
-  lines = []
-  lines << '<?xml version="1.0" encoding="UTF-8"?>'
-  lines << '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-  lines << '  <url>'
-  lines << '    <loc>https://banerjeerishi.com/</loc>'
-  lines << "    <lastmod>#{Time.now.utc.strftime('%Y-%m-%d')}</lastmod>"
-  lines << '    <priority>1.00</priority>'
-  lines << '  </url>'
-
-  entries_sorted.each do |dt, slug|
-    lines << '  <url>'
-    lines << "    <loc>#{SITE_PREFIX}/#{slug}.html</loc>"
-    lines << "    <lastmod>#{dt.strftime('%Y-%m-%d')}</lastmod>"
-    lines << '    <priority>0.80</priority>'
-    lines << '  </url>'
-  end
-
-  lines << '</urlset>'
-  File.write(SITEMAP_OUT, "#{lines.join("\n")}\n")
-  puts "Wrote sitemap to #{SITEMAP_OUT}"
-end
-
-unless Dir.exist?(MARKDOWN_DIR)
-  warn "Error markdown dir not found: #{MARKDOWN_DIR}"
+unless MARKDOWNS.directory?
+  warn "Error markdown dir not found: #{MARKDOWNS}"
   exit 2
 end
 
-entries = build_entries
-puts 'No markdown files found, writing sitemap with only homepage.' if entries.empty?
-write_sitemap(entries)
+articles = MARKDOWNS.children.sort.select { _1.file? && _1.extname.downcase == ".md" }.map do |file|
+  [created(file) || file.mtime.utc, Site.slugify(file.basename(".md").to_s)]
+end
+puts "No markdown files found, writing sitemap with only homepage." if articles.empty?
+
+if SITEMAP.exist?
+  backup = "#{SITEMAP}.bak.#{Time.now.utc.strftime("%Y%m%dT%H%M%SZ")}"
+  FileUtils.cp(SITEMAP, backup)
+  puts "Backed up existing sitemap to #{backup}"
+end
+
+lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+         *url("#{Site::URL}/", Time.now.utc, "1.00"),
+         *articles.sort_by { -_1.first.to_i }.flat_map { |date, slug| url("#{Site::URL}/text/#{slug}.html", date, "0.80") },
+         "</urlset>"]
+SITEMAP.write("#{lines.join("\n")}\n")
+puts "Wrote sitemap to #{SITEMAP}"

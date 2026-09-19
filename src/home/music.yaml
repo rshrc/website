@@ -59,59 +59,59 @@ items:
     url: https://open.spotify.com/album/0Fk4lWAADmFMmuW6jp6xyE?si=f98756699180488a
     note: Great for emotional gym workouts
   - text: Krishna Das
-    url: https://open.spotify.com/search/Krishna%20Das
+    url: https://open.spotify.com/artist/7BIXafmacnax46P30TEzNz
     note: introduced to me by Satya, my closest friend, confidant, and fellow lover of Shiva
   - text: Parvaaz
-    url: https://open.spotify.com/search/Parvaaz
+    url: https://open.spotify.com/artist/6vwSAnfnlO6Sy37KubGrLh
     note: Kashmiri and Urdu psych rock, from Bengaluru
     children:
-      - text: Start with [Baran](https://open.spotify.com/search/Parvaaz%20Baran), then [Kun](https://open.spotify.com/search/Parvaaz%20Kun), then [Na Gul Na Gulistan](https://open.spotify.com/search/Parvaaz%20Na%20Gul%20Na%20Gulistan)
+      - text: Start with [Baran](https://open.spotify.com/album/55GDDioOnYUTA3NtfZcqMx), then [Kun](https://open.spotify.com/album/4elrhRR5bdw7JhvrWl56XM), then [Na Gul Na Gulistan](https://open.spotify.com/album/1YQdQC8KBcvqZvI3e5T1hP)
   - text: The Local Train
-    url: https://open.spotify.com/search/The%20Local%20Train
-    note: "- [Vaaqif](https://open.spotify.com/search/The%20Local%20Train%20Vaaqif) and [Aalas Ka Pedh](https://open.spotify.com/search/The%20Local%20Train%20Aalas%20Ka%20Pedh), both albums, start to finish"
+    url: https://open.spotify.com/artist/7b6Ui7JVaBDEfZB9k6nHL0
+    note: "- [Vaaqif](https://open.spotify.com/album/1DW7mX33rABORCELQ4KkQn) and [Aalas Ka Pedh](https://open.spotify.com/album/4U2xdJPJfGo2HofVpSynwO), both albums, start to finish"
   - text: George Harrison
-    url: https://open.spotify.com/search/George%20Harrison
-    note: "- [All Things Must Pass](https://open.spotify.com/search/All%20Things%20Must%20Pass%20George%20Harrison), and While My Guitar Gently Weeps, which I built a whole playlist around"
+    url: https://open.spotify.com/artist/7FIoB5PHdrMZVC3q2HE5MS
+    note: "- [All Things Must Pass](https://open.spotify.com/album/4I4xtHaIFOzhZfp1NIHkY6), and While My Guitar Gently Weeps, which I built a whole playlist around"
   - text: The Beatles
-    url: https://open.spotify.com/search/The%20Beatles
+    url: https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2
     note: Norwegian Wood especially
   - text: Jeff Buckley
-    url: https://open.spotify.com/search/Jeff%20Buckley
+    url: https://open.spotify.com/artist/3nnQpaTvKb5jCQabZefACI
     note: just listen to Grace
   - text: Chris Cornell
-    url: https://open.spotify.com/search/Chris%20Cornell
+    url: https://open.spotify.com/artist/0XHiH53dHrvbwfjYM7en7I
     note: that voice. RIP
   - text: Audioslave
-    url: https://open.spotify.com/search/Audioslave
+    url: https://open.spotify.com/artist/2ziB7fzrXBoh1HUPS6sVFn
     note: Chris Cornell with Tom Morello on guitar, what more do you want
   - text: Chevelle
-    url: https://open.spotify.com/search/Chevelle
+    url: https://open.spotify.com/artist/56dO9zeHKuU5Gvfc2kxHNw
     note: if you like Breaking Benjamin, you will like Chevelle
   - text: Foxy Shazam
-    url: https://open.spotify.com/search/Foxy%20Shazam
+    url: https://open.spotify.com/artist/5qRXoCC1CDTMTli9gplUvk
     note: criminally underrated, go listen
   - text: Muse
-    url: https://open.spotify.com/search/Muse
-    note: "- [The Wow! Signal](https://open.spotify.com/search/Muse%20The%20Wow%21%20Signal)"
+    url: https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI
+    note: "- [The Wow! Signal](https://open.spotify.com/album/6TObgE5QDLYzA3Exu5vGhS)"
   - text: Woodkid
-    url: https://open.spotify.com/search/Woodkid
-    note: "- [The Golden Age](https://open.spotify.com/search/Woodkid%20The%20Golden%20Age)"
+    url: https://open.spotify.com/artist/44TGR1CzjKBxSHsSEy7bi9
+    note: "- [The Golden Age](https://open.spotify.com/album/4VyxCLPL2RuFLH9rMAWcxK)"
   - text: Nick Johnston
-    url: https://open.spotify.com/search/Nick%20Johnston
-    note: "- [Child of Bliss](https://open.spotify.com/search/Nick%20Johnston%20Child%20of%20Bliss), instrumental guitar at its best"
+    url: https://open.spotify.com/artist/3d5yBCe5SBKkJnWvl9GB7r
+    note: "- [Child of Bliss](https://open.spotify.com/album/4Orng10FlFfA7AYXDUyzXk), instrumental guitar at its best"
   - text: Anthony Vincent
-    url: https://open.spotify.com/search/Anthony%20Vincent
+    url: https://open.spotify.com/artist/5f18KeztDInZIN7cRyRdp6
     note: Ten Second Songs, look him up on YouTube
   - text: Keane
-    url: https://open.spotify.com/search/Keane
-    note: "- [Cause and Effect](https://open.spotify.com/search/Keane%20Cause%20and%20Effect), and Somewhere Only We Know, which never gets old"
+    url: https://open.spotify.com/artist/53A0W3U0s8diEn9RhXQhVz
+    note: "- [Cause and Effect](https://open.spotify.com/album/2V3ebysBMSaKfYUcsCWmKX), and Somewhere Only We Know, which never gets old"
   - text: David Bowie
-    url: https://open.spotify.com/search/David%20Bowie
+    url: https://open.spotify.com/artist/0oSGxfWSnnOXhD2fKuz2Gy
     note: Starman, Heroes, Space Oddity, pick any one, you cannot go wrong
   - text: Yeat
-    url: https://open.spotify.com/search/Yeat
-    note: "[Twizzy Rich](https://open.spotify.com/search/Yeat%20Twizzy%20Rich) is on repeat right now, go listen"
-  - text: "Some rap as well: [Kendrick Lamar](https://open.spotify.com/search/Kendrick%20Lamar), [Jeezy](https://open.spotify.com/search/Jeezy), [Kanye West](https://open.spotify.com/search/Kanye%20West), [Fetty Wap](https://open.spotify.com/search/Fetty%20Wap)"
+    url: https://open.spotify.com/artist/3qiHUAX7zY4Qnjx8TNUzVx
+    note: "[Twizzy Rich](https://open.spotify.com/track/44BAhrrgZKylwZh8zlUSaQ) is on repeat right now, go listen"
+  - text: "Some rap as well: [Kendrick Lamar](https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg), [Jeezy](https://open.spotify.com/artist/4yBK75WVCQXej1p04GWqxH), [Kanye West](https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x), [Fetty Wap](https://open.spotify.com/artist/6PXS4YHDkKvl1wkIl4V8DL)"
   - text: "Spider-Man: Across the Spider-Verse"
-    url: https://open.spotify.com/search/Across%20the%20Spider-Verse%20soundtrack
-    note: both soundtracks, [Daniel Pemberton's score](https://open.spotify.com/search/Daniel%20Pemberton%20Across%20the%20Spider-Verse) and [Metro Boomin's album](https://open.spotify.com/search/Metro%20Boomin%20Presents%20Spider-Man%20Across%20the%20Spider-Verse), go listen
+    url: https://open.spotify.com/album/1bwbZJ6khPJyVpOaqgKsoZ
+    note: both soundtracks, [Daniel Pemberton's score](https://open.spotify.com/album/6nlUFeFAPjaDTA7A0VVwnO) and [Metro Boomin's album](https://open.spotify.com/album/1bwbZJ6khPJyVpOaqgKsoZ), go listen

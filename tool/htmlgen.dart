@@ -207,7 +207,7 @@ void main(List<String> args) {
     var html = doc.outerHtml;
 
     // Output the template file updated in marked places with output.
-    var template = File(htmlTemplatePath).readAsStringSync();
+    var template = _expandIncludes(File(htmlTemplatePath).readAsStringSync());
     var output = template
         .replaceFirst('<!-- GENERATED_HTML -->', html)
         .replaceFirst('<!-- GENERATED_FOOTER -->', footerHtml)
@@ -312,6 +312,22 @@ class ObsidianEmbed {
       : assert(dimensions == null,
             "Unimplemented: dimensions of an obsidian embed");
 }
+
+/// Templates pull their CSS and JavaScript in from src/ at build time, so
+/// each page still ships as a single HTML file:
+///
+///     <style>/* INCLUDE css/article.css */</style>
+///
+/// Included files can include others the same way. A marker on a line of its
+/// own is replaced along with its indent and line break. Mirrors
+/// tool/lib/includes.rb, which does the same for the Ruby generators.
+String _expandIncludes(String text) => text.replaceAllMapped(
+      _includePattern,
+      (m) => _expandIncludes(File('src/${m.group(1)}').readAsStringSync()),
+    );
+
+final RegExp _includePattern =
+    RegExp(r'[ \t]*/\* INCLUDE ([\w/.-]+) \*/(?:[ \t]*\n)?');
 
 String _sanitizeFilename(String input) {
   final slug = input

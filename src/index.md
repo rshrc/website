@@ -5,11 +5,15 @@
      srcset="img/profile.jpg 1x, img/profile@2x.jpg 2x, img/profile@3x.jpg 3x, img/profile@4x.jpg 4x"
      alt="Rishi on a beach, sunglasses on, hair doing whatever it wants">
      
-I build software, wherever I happen to be. Bengaluru keeps getting me back. Something about the air there, the rain that turns up in the evening and nobody minds.
+I build software wherever I happen to be, though Bengaluru keeps getting me back. Something about the air there, the evening rain that turns up uninvited, and the fact that nobody seems to mind.
 
-Otherwise I'm moving. Every so often I find myself on a shaky, questionable local bus headed nowhere in particular.
+Otherwise, I’m moving. Every so often that means finding myself on a shaky, questionable local bus headed nowhere in particular.
 
-I write, I paint, I wanna make films. I picked up a guitar in class 4 and never really learned it; you have to be bad at something for a while before you're not, and I'm still waiting. Drums I want to start and haven't. I cook, mostly because the air fryer made it look easy. Coffee black, like the hole in space. Nothing escapes it, not light, not me. Books, poems, a good deal of philosophy.
+There’s writing. Painting too. Someday, films. A guitar has followed me around since Class Four, which is not the same thing as knowing how to play it. They say you have to be bad at something for a while before you’re not. I’m still conducting the first half of that experiment. Drums remain a future mistake.
+
+I cook, mostly because the air fryer made competence look easy. Coffee black, like the hole in space. Nothing escapes it. Not light. Not me.
+
+Then there are books, poems, and considerably more philosophy than is probably useful.
 
 > Life is short; opportunity fleeting; experiment perilous; judgement flawed.  
 > — Hippocrates

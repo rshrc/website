@@ -1,88 +1,59 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'digest'
+# `make run`: builds the site, serves it on localhost, and rebuilds whenever
+# anything under src/, markdowns/ or tool/ changes.
 
-ROOT = File.expand_path('..', __dir__)
-PORT = (ENV['PORT'] || '3002').to_i
-WATCH_DIRS = %w[src markdowns tool].freeze
-WATCH_FILES = %w[Makefile htmlgen.toml sitemap.xml robots.txt].freeze
-# src/.index.generated.md is written by the build itself (tool/homegen.rb);
-# watching it would make every build trigger the next one.
-IGNORE_PREFIXES = %w[build .git .dart_tool node_modules src/.index.generated.md].freeze
+require "digest"
+require_relative "lib/site"
 
+PORT          = ENV.fetch("PORT", "3002")
+WATCHED_DIRS  = %w[src markdowns tool].freeze
+WATCHED_FILES = %w[Makefile htmlgen.toml sitemap.xml robots.txt].freeze
 
-def run_builder
-  puts '[watch] rebuilding...'
-  ok = system('make', 'builder', chdir: ROOT)
-  rewrite_links_for_local_preview if ok
-  puts(ok ? '[watch] build ok' : '[watch] build failed')
-  ok
+# The build writes these itself. Watching them would make every build set off
+# the next one.
+GENERATED = %w[src/.index.generated.md src/.index.template.generated.html].freeze
+
+def fingerprint
+  files = WATCHED_DIRS.flat_map { Dir.glob("#{_1}/**/*", File::FNM_DOTMATCH, base: Site::ROOT) } + WATCHED_FILES
+  stamps = (files - GENERATED).map { Site.path(_1) }.select(&:file?).sort.map { "#{_1}:#{_1.mtime.to_f}" }
+  Digest::SHA256.hexdigest(stamps.join("|"))
 end
 
-def rewrite_links_for_local_preview
-  Dir.glob(File.join(ROOT, 'build', '**', '*.html')).each do |path|
-    content = File.read(path)
-    rewritten = content.gsub('https://banerjeerishi.com', '')
-    next if rewritten == content
-
-    File.write(path, rewritten)
+# Links in the build are absolute, for production. Dropping the domain makes
+# them work on localhost.
+def localize_links
+  Site.path("build").glob("**/*.html").each do |page|
+    html = page.read
+    page.write(html.gsub(Site::URL, "")) if html.include?(Site::URL)
   end
 end
 
-
-def ignored?(path)
-  rel = path.sub(%r{\A#{Regexp.escape(ROOT)}/?}, '')
-  IGNORE_PREFIXES.any? { |prefix| rel == prefix || rel.start_with?("#{prefix}/") }
+def build
+  puts "[watch] rebuilding..."
+  built = system("make", "builder", chdir: Site::ROOT)
+  localize_links if built
+  puts built ? "[watch] build ok" : "[watch] build failed"
 end
 
-
-def snapshot
-  files = []
-  WATCH_DIRS.each do |dir|
-    base = File.join(ROOT, dir)
-    next unless Dir.exist?(base)
-
-    Dir.glob(File.join(base, '**', '*'), File::FNM_DOTMATCH).each do |path|
-      next unless File.file?(path)
-      next if ignored?(path)
-      files << path
-    end
-  end
-
-  WATCH_FILES.each do |name|
-    path = File.join(ROOT, name)
-    files << path if File.file?(path)
-  end
-
-  sig = files.sort.map { |p| "#{p}:#{File.mtime(p).to_f}" }.join('|')
-  Digest::SHA256.hexdigest(sig)
-end
-
-run_builder
-
+build
 puts "[watch] starting static server at http://localhost:#{PORT}"
-server_pid = spawn('serve', 'build', '-l', PORT.to_s, chdir: ROOT)
+server = spawn("serve", "build", "-l", PORT, chdir: Site::ROOT)
 
-shutdown = proc do
-  puts "\n[watch] shutting down..."
-  begin
-    Process.kill('TERM', server_pid)
-  rescue StandardError
-    nil
+%i[INT TERM].each do |signal|
+  trap(signal) do
+    puts "\n[watch] shutting down..."
+    Process.kill("TERM", server) rescue nil
+    exit
   end
-  exit 0
 end
 
-trap('INT', &shutdown)
-trap('TERM', &shutdown)
-
-last = snapshot
+last = fingerprint
 loop do
-  sleep 1.0
-  current = snapshot
-  next if current == last
+  sleep 1
+  next if (now = fingerprint) == last
 
-  last = current
-  run_builder
+  last = now
+  build
 end

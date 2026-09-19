@@ -1,0 +1,181 @@
+
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #111111;
+        --link: #0b57d0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111111;
+          --fg: #e6e6e6;
+          --link: #8ab4f8;
+        }
+      }
+      :root[data-theme="light"] {
+        --bg: #ffffff;
+        --fg: #111111;
+        --link: #0b57d0;
+      }
+      :root[data-theme="dark"] {
+        --bg: #111111;
+        --fg: #e6e6e6;
+        --link: #8ab4f8;
+      }
+
+      .wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 5vw;
+        position: relative;
+      }
+
+      body {
+        font-family: Times, Georgia, serif;
+        background: var(--bg);
+        color: var(--fg);
+        transition: background-color 220ms ease, color 220ms ease;
+      }
+
+      h1, h2 {
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: normal;
+      }
+
+      .title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .theme-toggle-wrap {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 1.6em;
+      }
+
+      ul {
+        padding-left: 1em;
+      }
+
+      p, li {
+        font-size: 1.1rem;
+        line-height: 1.5em;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      a, abbr {
+        text-decoration: none;
+        color: var(--link);
+        transition: color 220ms ease;
+      }
+
+      /* INCLUDE css/theme-toggle.css */
+
+      .portrait {
+        margin-top: 1em;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        width: 175px;
+        float: right;
+
+        animation: appear-portrait 6s;
+      }
+
+      @keyframes appear-portrait { 0% {opacity: 0;} 40% {opacity: 1;} }
+
+      .note {
+        text-transform: uppercase;
+        font-size: 60%;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+      }
+
+      @media screen and (max-width: 380px) {
+        .portrait {
+          float: none;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      /* Hover card on essay links. Built in the page's own colours and type,
+         shown only on devices that can actually hover. */
+      .preview {
+        position: absolute;
+        z-index: 10;
+        max-width: 22rem;
+        padding: 0.75rem 0.9rem;
+        background: var(--bg);
+        color: var(--fg);
+        border: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+        border-radius: 6px;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(4px);
+        transition: opacity 140ms ease, transform 140ms ease, visibility 0s linear 140ms;
+      }
+
+      .preview.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition-delay: 0s;
+      }
+
+      .preview-text {
+        margin: 0 0 0.45rem;
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .preview-meta {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+
+      /* Spotify links: cover art on the left, title and kind beside it. */
+      .preview.has-cover {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        column-gap: 0.75rem;
+        align-items: center;
+      }
+
+      .preview-cover {
+        display: none;
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+
+      .preview.has-cover .preview-cover {
+        display: block;
+        grid-row: 1 / span 2;
+      }
+
+      .preview.has-cover .preview-text {
+        margin-bottom: 0.25rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .preview, .preview.is-visible { transition: none; transform: none; }
+      }
+
+      /* GENERATED CSS */
+
+    

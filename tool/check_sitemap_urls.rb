@@ -1,57 +1,41 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'optparse'
-require 'rexml/document'
-require 'uri'
+# Checks that every article URL in the sitemap has a page in the build.
+# Exits 1 when some are missing, 2 when there's nothing to check.
 
-options = {
-  sitemap: 'sitemap.xml',
-  build_dir: 'build'
-}
+require "optparse"
+require "rexml/document"
+require "uri"
 
+sitemap, build = "sitemap.xml", "build"
 OptionParser.new do |opts|
-  opts.on('--sitemap PATH') { |v| options[:sitemap] = v }
-  opts.on('--build-dir PATH') { |v| options[:build_dir] = v }
+  opts.on("--sitemap PATH") { sitemap = _1 }
+  opts.on("--build-dir PATH") { build = _1 }
 end.parse!
 
-unless File.exist?(options[:sitemap])
-  warn "ERROR: sitemap not found: #{options[:sitemap]}"
+def fail!(message)
+  warn "ERROR: #{message}"
   exit 2
 end
 
-unless Dir.exist?(options[:build_dir])
-  warn "ERROR: build dir not found: #{options[:build_dir]}"
-  exit 2
+fail! "sitemap not found: #{sitemap}" unless File.exist?(sitemap)
+fail! "build dir not found: #{build}" unless Dir.exist?(build)
+
+articles = REXML::XPath.match(REXML::Document.new(File.read(sitemap)), "//xmlns:url/xmlns:loc")
+                       .map { _1.text.to_s.strip }
+                       .select { URI.parse(_1).path.then { |path| path.start_with?("/text/") && path.end_with?(".html") } }
+fail! "no blog URLs found in sitemap (/text/*.html)." if articles.empty?
+
+missing = articles.filter_map do |loc|
+  page = File.join(build, URI.parse(loc).path.delete_prefix("/"))
+  "#{loc} -> missing #{page}" unless File.exist?(page)
 end
 
-xml = REXML::Document.new(File.read(options[:sitemap]))
-locs = []
-REXML::XPath.each(xml, "//xmlns:url/xmlns:loc") { |node| locs << node.text.to_s.strip }
-
-checked = 0
-failures = []
-
-locs.each do |loc|
-  uri = URI.parse(loc)
-  path = uri.path
-  next unless path.start_with?('/text/') && path.end_with?('.html')
-
-  checked += 1
-  rel = path.sub(%r{\A/}, '')
-  artifact = File.join(options[:build_dir], rel)
-  failures << "#{loc} -> missing #{artifact}" unless File.exist?(artifact)
-end
-
-if checked.zero?
-  warn 'ERROR: no blog URLs found in sitemap (/text/*.html).'
-  exit 2
-end
-
-if failures.any?
-  puts "FAIL: #{failures.length} of #{checked} sitemap blog URLs are not reachable:"
-  failures.each { |f| puts "  - #{f}" }
+if missing.any?
+  puts "FAIL: #{missing.size} of #{articles.size} sitemap blog URLs are not reachable:"
+  missing.each { puts "  - #{_1}" }
   exit 1
 end
 
-puts "PASS: all #{checked} sitemap blog URLs map to existing build artifacts."
+puts "PASS: all #{articles.size} sitemap blog URLs map to existing build artifacts."

@@ -7,13 +7,17 @@
 title: Writing
 items:
   - text: Articles [here](https://banerjeerishi.com/text) ([RSS](https://banerjeerishi.com/text/atom.xml))
+    preview: All %{essays} essays in one place, newest first.
   - text: Medium
     url: https://medium.com/@banerjeerishi
+    preview: Django guides, a REST auth walkthrough, and how I got the Dell internship.
     children:
       - text: Django & DRF Flexibility
         url: https://medium.com/django-unleashed/django-drf-flexibility-38c5e6b6435c
+        preview: "Sure, it is, but did you know? What takes a week in Express.js, Django knocks out in a single afternoon! With Django Ninja showing so much promise, this blog might not be that relevant for senior Django engineers."
       - text: Django Lifecycle Hooks
         url: https://medium.com/django-unleashed/django-lifecycle-hooks-ed731e4c829a
+        preview: "Django is a robust and versatile Python web framework used by developers worldwide to build all sorts of applications. Its all about making life easier! Except, of course, when it comes to managing model triggers with signals."
       - text: MySQL on Manjaro
         url: https://medium.com/@banerjeerishi/mysql-on-manjaro-973e4bfc4f05
         note: "- this one helped few people"
@@ -29,9 +33,11 @@ items:
         url: https://banerjeerishi.com/text/why-i-chose-vim.html
         note: "- My journey from despising Vim in my first year of college to crowning it as the ultimate editor"
       - text: Writing a scheduler using Django/DRF
-        url: https://banerjeerishi.com/text/writing-a-scheduler-using-django-and-celerybeat-crontab.html
+        url: https://medium.com/django-unleashed/writing-a-scheduler-using-django-celerybeat-crontab-b3d5689abbe1
+        preview: "Today we\u2019re diving into something super practical \u2014 how to build a medicine reminder app using Django, Celery-Beat, and Docker. If you\u2019ve been dabbling with Django and Celery, you know how crucial task scheduling can be."
       - text: Why Choose Django as a Startup?
         url: https://banerjeerishi.com/text/why-choose-django-as-a-startup.html
       - text: Rails really packs a punch
-        url: https://banerjeerishi.com/text/rails-really-packs-a-punch.html
+        url: https://medium.com/@banerjeerishi/rails-really-packs-a-punch-508591157224
+        preview: "After seven years with Django, I\u2019ve become a bit of a Python zealot. It\u2019s sleek, it\u2019s flexible, and with Django, you have all the essentials neatly packed into a one-stop web framework. Yet, for the past couple of years, I\u2019ve been dabbling with Ruby on Rails."
         note: — I'm a huge Django enthusiast myself, but I've got to admit, Rails offers a level of comprehensiveness that Django just doesn't match. The only thing keeping me anchored to Django is my preference for Python over DHH Lang (also known as Ruby)

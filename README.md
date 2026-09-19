@@ -22,28 +22,28 @@ To deploy:
 $ make deploy
 ```
 
-## Consolidated local tooling
+## Tooling
 
-Utility scripts are consolidated under `tool/site_tasks`:
-
-```bash
-ruby tool/site_tasks spanify
-ruby tool/site_tasks htmlgen
-ruby tool/site_tasks booksgen
-ruby tool/site_tasks update-sitemap
-ruby tool/site_tasks check-sitemap-urls
-```
-
-Shortcuts:
+Everything runs through `make`:
 
 ```bash
-make r   # run watch server
-make s   # spanify
-make g   # htmlgen
-make b   # books pages from markdown
-make u   # update sitemap
-make c   # check sitemap URLs
+make run              # build, serve on localhost:3002, rebuild on changes (make r)
+make builder          # build into ./build
+make deploy           # build and ship to Firebase
+make covers           # fetch cover art for new Spotify links
+make update-sitemap   # rewrite sitemap.xml from markdowns/ (make u)
+make check-sitemap-urls  # every sitemap URL has a built page (make c)
 ```
+
+Where things live:
+
+- `src/index.md` is the homepage prose. Its lists live in `src/home/*.yaml`,
+  placed with `<!-- SECTION name -->`. The essay list is built from the
+  published articles.
+- `src/css/` and `src/js/` hold the styles and scripts. Templates pull them
+  in with `/* INCLUDE css/home.css */`, so every page still ships as a
+  single HTML file.
+- `tool/` has the generators. Shared Ruby lives in `tool/lib/`.
 
 ## Write new articles
 
