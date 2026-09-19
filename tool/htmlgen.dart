@@ -102,7 +102,7 @@ void main(List<String> args) {
     var description = frontMatter['description'] ?? '';
     var date = frontMatter['date'] ?? '';
     var socialImage = frontMatter['social_image'] ??
-        'https://banerjeerishi.com/img/profile.png';
+        'https://banerjeerishi.com/img/share-card.jpg';
     var shouldPublish = frontMatter['publish'] == true;
 
     if (!shouldPublish) {

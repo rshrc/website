@@ -9,7 +9,7 @@ I build software, wherever I happen to be. Bengaluru keeps getting me back. Some
 
 Otherwise I'm moving. Every so often I find myself on a shaky, questionable local bus headed nowhere in particular.
 
-I write, I paint, I make films. I picked up a guitar in class 4 and never really learned it; you have to be bad at something for a while before you're not, and I'm still waiting. Drums I want to start and haven't. I cook, mostly because the air fryer made it look easy. Coffee black, like the hole in space. Nothing escapes it, not light, not me. Books, poems, a good deal of philosophy.
+I write, I paint, I wanna make films. I picked up a guitar in class 4 and never really learned it; you have to be bad at something for a while before you're not, and I'm still waiting. Drums I want to start and haven't. I cook, mostly because the air fryer made it look easy. Coffee black, like the hole in space. Nothing escapes it, not light, not me. Books, poems, a good deal of philosophy.
 
 > Life is short; opportunity fleeting; experiment perilous; judgement flawed.  
 > — Hippocrates
