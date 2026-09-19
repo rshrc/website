@@ -16,6 +16,9 @@ OUT_DIR = File.join(ROOT, 'web', 'books')
 SHELF_DATA_PATH = File.join(SRC_DIR, 'shelf.yaml')
 SHELF_TEMPLATE_PATH = File.join(SRC_DIR, 'shelf.template.html')
 
+# The same footer the article pages use, so the two stay in sync.
+FOOTER_PATH = File.join(ROOT, 'src', 'text', 'page_footer.md')
+
 BOOK_FIELDS = %w[title author status progress_percent progress_note category
                  favourite started_at finished_at rating notes amazon].freeze
 VALID_STATUSES = %w[finished reading paused want].freeze
@@ -34,6 +37,28 @@ def amazon_url(book)
 
   query = "#{book['title']} #{book['author']}".gsub(/[^\p{Alnum}\s]/, ' ').split.join(' ')
   AMAZON_SEARCH + URI.encode_www_form_component(query)
+end
+
+
+# A deliberately small Markdown pass: enough for the footer file, which is a
+# raw <img> tag plus a few paragraphs of links and bold text.
+def render_footer
+  html = []
+  File.read(FOOTER_PATH).split(/\n{2,}/).each do |block|
+    block = block.strip
+    next if block.empty?
+
+    if block.start_with?('<')
+      html << block
+      next
+    end
+
+    text = block.gsub('&', '&amp;')
+    text = text.gsub(/\*\*(.+?)\*\*/, '<strong>\\1</strong>')
+    text = text.gsub(/\[(.+?)\]\((.+?)\)/, '<a href="\\2">\\1</a>')
+    html << "<p>#{text}</p>"
+  end
+  html.join("\n        ")
 end
 
 
@@ -89,7 +114,10 @@ def write_shelf_page
   # A literal `</script>` in the data would close the tag early.
   json = JSON.generate(books).gsub('<') { ESCAPED_LT }
 
-  output = File.read(SHELF_TEMPLATE_PATH).sub('GENERATED_JSON') { json }
+  footer = render_footer
+  output = File.read(SHELF_TEMPLATE_PATH)
+               .sub('GENERATED_JSON') { json }
+               .sub('<!-- GENERATED_FOOTER -->') { footer }
   out_path = File.join(OUT_DIR, 'shelf.html')
   File.write(out_path, output)
   puts "written #{out_path} (#{books.size} books)"

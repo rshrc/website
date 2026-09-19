@@ -112,7 +112,7 @@ Building software, products, and small experiments. My work spans startup engine
 
 ## Books
 
-* [The Shelf](/books/shelf.html) — my reading log from 2025 onwards: what's open, what's finished, and how far along I actually am
+* [The Shelf](/books/shelf.html) - my reading log from 2025 onwards: what's open, what's finished, and how far along I honestly am
 
 ## Social
 
