@@ -110,12 +110,10 @@ Building software, products, and small experiments. My work spans startup engine
 * [Build Fast Lists in Flutter](https://banerjeerishi.com/text/build-fast-lists-in-flutter.html)
 * [Your First Engineer](https://banerjeerishi.com/text/your-first-engineer.html)
 
-## Favorite Books
+## Books
 
-* [2023](/books/2023.html)
-* [2024](/books/2024.html)
-* [2025](/books/2025.html)
-* [2026](/books/2026.html)
+* [The Shelf](/books/shelf.html) — my reading log from 2025 onwards: what's open, what's finished, and how far along I actually am
+
 ## Social
 
 * [Github](https://github.com/rshrc)

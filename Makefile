@@ -8,7 +8,9 @@ deploy: builder
 		firebase deploy
 		echo "Visit @ https://banerjeerishi.com"
 
-builder: copy_web booksgen htmlgen
+# booksgen writes into ./web, so it has to run before copy_web copies ./web
+# into ./build — otherwise generated book pages land in the build one run late.
+builder: booksgen copy_web htmlgen
 
 
 copy_web: spanify
