@@ -151,6 +151,26 @@ This is the collection where I list the ones that "I" find unconventional. Which
 * [Killer Mike](https://open.spotify.com/artist/2N4EYkIlG1kv25g6Wv8LGI?si=d7bd9bca8e8d435e) taken out of RTJ
 * [Danzig](https://open.spotify.com/artist/34c4iQ5tkaZKu6Sv28BTde?si=oC47EsF9RheiyIVvEEHw2w) "MOTHER"
 * [Alter Bridge](https://open.spotify.com/album/0Fk4lWAADmFMmuW6jp6xyE?si=f98756699180488a) Great for emotional gym workouts
+* [Krishna Das](https://open.spotify.com/search/Krishna%20Das) introduced to me by Satya, my closest friend, confidant, and fellow lover of Shiva
+* [Parvaaz](https://open.spotify.com/search/Parvaaz) Kashmiri and Urdu psych rock, from Bengaluru
+  - Start with [Baran](https://open.spotify.com/search/Parvaaz%20Baran), then [Kun](https://open.spotify.com/search/Parvaaz%20Kun), then [Na Gul Na Gulistan](https://open.spotify.com/search/Parvaaz%20Na%20Gul%20Na%20Gulistan)
+* [The Local Train](https://open.spotify.com/search/The%20Local%20Train) - [Vaaqif](https://open.spotify.com/search/The%20Local%20Train%20Vaaqif) and [Aalas Ka Pedh](https://open.spotify.com/search/The%20Local%20Train%20Aalas%20Ka%20Pedh), both albums, start to finish
+* [George Harrison](https://open.spotify.com/search/George%20Harrison) - [All Things Must Pass](https://open.spotify.com/search/All%20Things%20Must%20Pass%20George%20Harrison), and While My Guitar Gently Weeps, which I built a whole playlist around
+* [The Beatles](https://open.spotify.com/search/The%20Beatles) Norwegian Wood especially
+* [Jeff Buckley](https://open.spotify.com/search/Jeff%20Buckley) just listen to Grace
+* [Chris Cornell](https://open.spotify.com/search/Chris%20Cornell) that voice. RIP
+* [Audioslave](https://open.spotify.com/search/Audioslave) Chris Cornell with Tom Morello on guitar, what more do you want
+* [Chevelle](https://open.spotify.com/search/Chevelle) if you like Breaking Benjamin, you will like Chevelle
+* [Foxy Shazam](https://open.spotify.com/search/Foxy%20Shazam) criminally underrated, go listen
+* [Muse](https://open.spotify.com/search/Muse) - [The Wow! Signal](https://open.spotify.com/search/Muse%20The%20Wow%21%20Signal)
+* [Woodkid](https://open.spotify.com/search/Woodkid) - [The Golden Age](https://open.spotify.com/search/Woodkid%20The%20Golden%20Age)
+* [Nick Johnston](https://open.spotify.com/search/Nick%20Johnston) - [Child of Bliss](https://open.spotify.com/search/Nick%20Johnston%20Child%20of%20Bliss), instrumental guitar at its best
+* [Anthony Vincent](https://open.spotify.com/search/Anthony%20Vincent) Ten Second Songs, look him up on YouTube
+* [Keane](https://open.spotify.com/search/Keane) - [Cause and Effect](https://open.spotify.com/search/Keane%20Cause%20and%20Effect), and Somewhere Only We Know, which never gets old
+* [David Bowie](https://open.spotify.com/search/David%20Bowie) Starman, Heroes, Space Oddity, pick any one, you cannot go wrong
+* [Yeat](https://open.spotify.com/search/Yeat) [Twizzy Rich](https://open.spotify.com/search/Yeat%20Twizzy%20Rich) is on repeat right now, go listen
+* Some rap as well: [Kendrick Lamar](https://open.spotify.com/search/Kendrick%20Lamar), [Jeezy](https://open.spotify.com/search/Jeezy), [Kanye West](https://open.spotify.com/search/Kanye%20West), [Fetty Wap](https://open.spotify.com/search/Fetty%20Wap)
+* [Spider-Man: Across the Spider-Verse](https://open.spotify.com/search/Across%20the%20Spider-Verse%20soundtrack) both soundtracks, [Daniel Pemberton's score](https://open.spotify.com/search/Daniel%20Pemberton%20Across%20the%20Spider-Verse) and [Metro Boomin's album](https://open.spotify.com/search/Metro%20Boomin%20Presents%20Spider-Man%20Across%20the%20Spider-Verse), go listen
 
 ## About this page
 
