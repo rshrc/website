@@ -5,7 +5,11 @@
      srcset="img/profile.jpg 1x, img/profile@2x.jpg 2x, img/profile@3x.jpg 3x, img/profile@4x.jpg 4x"
      alt="Rishi's face">
      
-Building software, products, and small experiments. My work spans startup engineering, backend systems, internal tools, and independent projects. Working remotely from different places, with Bengaluru as a city I return to from time to time. Outside code, I love good books and poems, philosophy, occasional writing, filmmaking, proper meals, and strong coffee.
+I build software, wherever I happen to be. Bengaluru keeps getting me back. Something about the air there, the rain that turns up in the evening and nobody minds.
+
+Otherwise I'm moving. Every so often I find myself on a shaky, questionable local bus headed nowhere in particular.
+
+I write, I paint, I make films. I picked up a guitar in class 4 and never really learned it; you have to be bad at something for a while before you're not, and I'm still waiting. Drums I want to start and haven't. I cook, mostly because the air fryer made it look easy. Coffee black, like the hole in space. Nothing escapes it, not light, not me. Books, poems, a good deal of philosophy.
 
 > Life is short; opportunity fleeting; experiment perilous; judgement flawed.  
 > — Hippocrates
