@@ -7,7 +7,9 @@ ROOT = File.expand_path('..', __dir__)
 PORT = (ENV['PORT'] || '3002').to_i
 WATCH_DIRS = %w[src markdowns tool].freeze
 WATCH_FILES = %w[Makefile htmlgen.toml sitemap.xml robots.txt].freeze
-IGNORE_PREFIXES = %w[build .git .dart_tool node_modules].freeze
+# src/.index.generated.md is written by the build itself (tool/homegen.rb);
+# watching it would make every build trigger the next one.
+IGNORE_PREFIXES = %w[build .git .dart_tool node_modules src/.index.generated.md].freeze
 
 
 def run_builder

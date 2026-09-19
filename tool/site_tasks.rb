@@ -12,8 +12,12 @@ def run_cmd(*cmd)
 end
 
 def cmd_spanify
+  # Fill the generated sections (the essay list) into a copy of index.md
+  # first, so spanify animates them like everything else on the page.
+  return 1 unless run_cmd('ruby', 'tool/homegen.rb').zero?
+
   src_tpl = File.join(ROOT, 'src', 'index.template.html')
-  src_md = File.join(ROOT, 'src', 'index.md')
+  src_md = File.join(ROOT, 'src', '.index.generated.md')
   out_file = File.join(ROOT, 'web', 'index.html')
 
   Dir.mkdir(File.dirname(out_file)) unless Dir.exist?(File.dirname(out_file))

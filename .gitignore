@@ -34,3 +34,6 @@ blog/
 sitemap.xml.bak*
 src/books/
 web/books/
+
+# Built by tool/homegen.rb from src/index.md; spanify reads this copy.
+src/.index.generated.md

@@ -1,0 +1,37 @@
+# Homepage section. Placed in src/index.md at <!-- SECTION writing -->
+# and rendered by tool/homegen.rb.
+#
+# Each item: text (required), url, note (Markdown written after the link,
+# as-is), children (nested items, same fields).
+
+title: Writing
+items:
+  - text: Articles [here](https://banerjeerishi.com/text) ([RSS](https://banerjeerishi.com/text/atom.xml))
+  - text: Medium
+    url: https://medium.com/@banerjeerishi
+    children:
+      - text: Django & DRF Flexibility
+        url: https://medium.com/django-unleashed/django-drf-flexibility-38c5e6b6435c
+      - text: Django Lifecycle Hooks
+        url: https://medium.com/django-unleashed/django-lifecycle-hooks-ed731e4c829a
+      - text: MySQL on Manjaro
+        url: https://medium.com/@banerjeerishi/mysql-on-manjaro-973e4bfc4f05
+        note: "- this one helped few people"
+  - text: A Few Fav Tech Helpers - these are here as well as medium
+    children:
+      - text: Easy Crontab with Celery-Beat
+        url: https://banerjeerishi.com/text/easy-crontab-with-celery-beat.html
+      - text: Setting up Django with Docker Compose & OrbStack
+        url: https://banerjeerishi.com/text/setting-up-django-with-docker-compose-orbstack.html
+      - text: Historical Records in Django
+        url: https://banerjeerishi.com/text/historical-records-in-django.html
+      - text: Why I chose Vim?
+        url: https://banerjeerishi.com/text/why-i-chose-vim.html
+        note: "- My journey from despising Vim in my first year of college to crowning it as the ultimate editor"
+      - text: Writing a scheduler using Django/DRF
+        url: https://banerjeerishi.com/text/writing-a-scheduler-using-django-and-celerybeat-crontab.html
+      - text: Why Choose Django as a Startup?
+        url: https://banerjeerishi.com/text/why-choose-django-as-a-startup.html
+      - text: Rails really packs a punch
+        url: https://banerjeerishi.com/text/rails-really-packs-a-punch.html
+        note: — I'm a huge Django enthusiast myself, but I've got to admit, Rails offers a level of comprehensiveness that Django just doesn't match. The only thing keeping me anchored to Django is my preference for Python over DHH Lang (also known as Ruby)

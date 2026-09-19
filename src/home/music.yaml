@@ -1,0 +1,117 @@
+# Homepage section. Placed in src/index.md at <!-- SECTION music -->
+# and rendered by tool/homegen.rb.
+#
+# Each item: text (required), url, note (Markdown written after the link,
+# as-is), children (nested items, same fields).
+
+title: Music Taste
+intro: This is the collection where I list the ones that "I" find unconventional. Which means; Michael, Elvis, Coldplay and many more of the obvious artists make the list.
+items:
+  - text: Breaking Benjamin
+    url: https://open.spotify.com/playlist/37i9dQZF1DZ06evO3iBwVq?si=16e1f990c0ee474e
+    children:
+      - text: Favorite Album [Phobia](https://open.spotify.com/album/6yJdQMlMkfYJFiSsL6764c?si=45d70faf4b364974)
+  - text: Foo Fighters
+    url: https://foofighters.com/
+    note: go buy some merch
+    children:
+      - text: Favorite Album [Wasting Light](https://open.spotify.com/album/5lnQLEUiVDkLbFJHXHQu9m?si=1658019860394a16)
+      - text: Sonic Highways
+        url: https://open.spotify.com/album/2qwN15acAl3sm3Idce5vK9?si=b7c6089d2e8e4881
+        note: is surreal
+  - text: RTJ
+    url: https://open.spotify.com/artist/4RnBFZRiMLRyZy0AzzTg2C?si=c96d966285d84e67
+    note: "- Run the Jewels"
+    children:
+      - text: Truth be told, I got hooked with [Legend has It](https://open.spotify.com/track/7satW8tFLasyZbftvrWFBP?si=4d6b77194c104154) from Black Panther, then I heard [A Report to the Shareholders](https://open.spotify.com/track/7cXFQxnCKlTWdn1vow1v55?si=677c0527d55e4180) 4 years later, paving the way for me to explore all the albums by RTJ, and I love each and every one of them
+  - text: Danzig
+    url: https://open.spotify.com/artist/34c4iQ5tkaZKu6Sv28BTde?si=Gt9G3W_hQma2EKPJdQGv5A
+    note: "- Listen to this [song](https://open.spotify.com/track/1Gt07aYIpl5yJcTbH95s7v?si=f7d4079542544b9d)"
+  - text: The Black Album
+    url: https://open.spotify.com/album/2ROptx2K5R4YYqlQQRpT7k?si=vnnMgVuxTJuufcTDt6yF9Q
+  - text: B.B. King
+    url: https://open.spotify.com/artist/5xLSa7l4IV1gsQfhAMvl0U?si=790df151fda7468e
+    note: is always gonna make the list :)
+  - text: Sound City - Reel to Reel
+    url: https://open.spotify.com/album/066mZjq57UkWDAM7A6PWce?si=ddf7eb5c38bd4d3f
+    note: you need to listen to this album, if born as a mortal on this mortal earth, for the love of God!
+  - text: Porcupine Tree
+    url: https://open.spotify.com/artist/5NXHXK6hOCotCF8lvGM1I0?si=dbe077a1f22d4655
+    note: this band requires so much more attention, Steven Wilson is literally a living God of Music. A college senior recommended this to me, and I am thankful to her wherever she is!
+  - text: Age of Aquarius
+    url: https://open.spotify.com/album/6qvEBNlB4rS4trNxuP2gAe?si=43067fc12d8a4206
+  - text: Hulo
+    url: https://open.spotify.com/artist/0VmqJsRLRKbPBh9ZgnBzdB?si=ddaa9b1817ef4fe3
+    note: a really good indie artist
+  - text: Radiohead
+    url: https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb?si=08199a46d02949ca
+    note: Erlich Bachman can hate them, I can't
+  - text: Ozzy Osbourne
+    url: https://open.spotify.com/artist/6ZLTlhejhndI4Rh53vYhrY?si=06f62eb6439c444c
+    note: RIP
+  - text: Killer Mike
+    url: https://open.spotify.com/artist/2N4EYkIlG1kv25g6Wv8LGI?si=d7bd9bca8e8d435e
+    note: taken out of RTJ
+  - text: Danzig
+    url: https://open.spotify.com/artist/34c4iQ5tkaZKu6Sv28BTde?si=oC47EsF9RheiyIVvEEHw2w
+    note: "\"MOTHER\""
+  - text: Alter Bridge
+    url: https://open.spotify.com/album/0Fk4lWAADmFMmuW6jp6xyE?si=f98756699180488a
+    note: Great for emotional gym workouts
+  - text: Krishna Das
+    url: https://open.spotify.com/search/Krishna%20Das
+    note: introduced to me by Satya, my closest friend, confidant, and fellow lover of Shiva
+  - text: Parvaaz
+    url: https://open.spotify.com/search/Parvaaz
+    note: Kashmiri and Urdu psych rock, from Bengaluru
+    children:
+      - text: Start with [Baran](https://open.spotify.com/search/Parvaaz%20Baran), then [Kun](https://open.spotify.com/search/Parvaaz%20Kun), then [Na Gul Na Gulistan](https://open.spotify.com/search/Parvaaz%20Na%20Gul%20Na%20Gulistan)
+  - text: The Local Train
+    url: https://open.spotify.com/search/The%20Local%20Train
+    note: "- [Vaaqif](https://open.spotify.com/search/The%20Local%20Train%20Vaaqif) and [Aalas Ka Pedh](https://open.spotify.com/search/The%20Local%20Train%20Aalas%20Ka%20Pedh), both albums, start to finish"
+  - text: George Harrison
+    url: https://open.spotify.com/search/George%20Harrison
+    note: "- [All Things Must Pass](https://open.spotify.com/search/All%20Things%20Must%20Pass%20George%20Harrison), and While My Guitar Gently Weeps, which I built a whole playlist around"
+  - text: The Beatles
+    url: https://open.spotify.com/search/The%20Beatles
+    note: Norwegian Wood especially
+  - text: Jeff Buckley
+    url: https://open.spotify.com/search/Jeff%20Buckley
+    note: just listen to Grace
+  - text: Chris Cornell
+    url: https://open.spotify.com/search/Chris%20Cornell
+    note: that voice. RIP
+  - text: Audioslave
+    url: https://open.spotify.com/search/Audioslave
+    note: Chris Cornell with Tom Morello on guitar, what more do you want
+  - text: Chevelle
+    url: https://open.spotify.com/search/Chevelle
+    note: if you like Breaking Benjamin, you will like Chevelle
+  - text: Foxy Shazam
+    url: https://open.spotify.com/search/Foxy%20Shazam
+    note: criminally underrated, go listen
+  - text: Muse
+    url: https://open.spotify.com/search/Muse
+    note: "- [The Wow! Signal](https://open.spotify.com/search/Muse%20The%20Wow%21%20Signal)"
+  - text: Woodkid
+    url: https://open.spotify.com/search/Woodkid
+    note: "- [The Golden Age](https://open.spotify.com/search/Woodkid%20The%20Golden%20Age)"
+  - text: Nick Johnston
+    url: https://open.spotify.com/search/Nick%20Johnston
+    note: "- [Child of Bliss](https://open.spotify.com/search/Nick%20Johnston%20Child%20of%20Bliss), instrumental guitar at its best"
+  - text: Anthony Vincent
+    url: https://open.spotify.com/search/Anthony%20Vincent
+    note: Ten Second Songs, look him up on YouTube
+  - text: Keane
+    url: https://open.spotify.com/search/Keane
+    note: "- [Cause and Effect](https://open.spotify.com/search/Keane%20Cause%20and%20Effect), and Somewhere Only We Know, which never gets old"
+  - text: David Bowie
+    url: https://open.spotify.com/search/David%20Bowie
+    note: Starman, Heroes, Space Oddity, pick any one, you cannot go wrong
+  - text: Yeat
+    url: https://open.spotify.com/search/Yeat
+    note: "[Twizzy Rich](https://open.spotify.com/search/Yeat%20Twizzy%20Rich) is on repeat right now, go listen"
+  - text: "Some rap as well: [Kendrick Lamar](https://open.spotify.com/search/Kendrick%20Lamar), [Jeezy](https://open.spotify.com/search/Jeezy), [Kanye West](https://open.spotify.com/search/Kanye%20West), [Fetty Wap](https://open.spotify.com/search/Fetty%20Wap)"
+  - text: "Spider-Man: Across the Spider-Verse"
+    url: https://open.spotify.com/search/Across%20the%20Spider-Verse%20soundtrack
+    note: both soundtracks, [Daniel Pemberton's score](https://open.spotify.com/search/Daniel%20Pemberton%20Across%20the%20Spider-Verse) and [Metro Boomin's album](https://open.spotify.com/search/Metro%20Boomin%20Presents%20Spider-Man%20Across%20the%20Spider-Verse), go listen

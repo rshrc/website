@@ -1,0 +1,11 @@
+# Homepage section. Placed in src/index.md at <!-- SECTION books -->
+# and rendered by tool/homegen.rb.
+#
+# Each item: text (required), url, note (Markdown written after the link,
+# as-is), children (nested items, same fields).
+
+title: Books
+items:
+  - text: The Shelf
+    url: /books/shelf.html
+    note: "- my reading log from 2025 onwards: what's open, what's finished, and how far along I honestly am"
