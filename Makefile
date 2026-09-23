@@ -1,7 +1,7 @@
 # Everything goes through make: `make run` while working on the site,
 # `make deploy` to ship it. Builds never touch the network; `make covers` does.
 
-.PHONY: run deploy builder clean copy_web spanify htmlgen booksgen covers \
+.PHONY: run deploy builder clean copy_web spanify htmlgen booksgen gamesgen games-check covers \
         update-sitemap check-sitemap-urls r s g b u c
 
 run:
@@ -11,9 +11,9 @@ deploy: builder
 	firebase deploy
 	echo "Visit @ https://banerjeerishi.com"
 
-# booksgen writes into ./web, so it has to run before copy_web copies ./web
-# into ./build, or generated book pages land in the build one run late.
-builder: booksgen copy_web htmlgen
+# booksgen and gamesgen write into ./web, so they have to run before copy_web
+# copies ./web into ./build, or generated pages land in the build one run late.
+builder: booksgen gamesgen copy_web htmlgen
 
 clean:
 	rm -rf ./build
@@ -39,6 +39,14 @@ htmlgen:
 
 booksgen:
 	ruby tool/booksgen.rb
+
+# Compiles each game in src/games/ from Dart and bakes it into web/games/.
+gamesgen:
+	ruby tool/gamesgen.rb
+
+# Runs the game simulations headlessly and checks they behave.
+games-check:
+	dart run tool/games_check.dart
 
 # Fetches cover art for new Spotify links in src/home/*.yaml.
 covers:

@@ -1,0 +1,124 @@
+# Every game on /games/, in the order listed. Rendered by tool/gamesgen.rb,
+# which compiles src/games/<slug>/main.dart to JavaScript and bakes it into
+# web/games/<slug>.html.
+#
+# Each game: slug (its folder), title, note (one line for the index),
+# description (meta tags), intro (HTML paragraphs above the board), colophon.
+
+games:
+  - slug: life
+    title: Life
+    note: Conway's cellular automaton. Draw on it, stamp a glider gun, bend the rules.
+    description: Conway's Game of Life, written in Dart. Draw cells, stamp classic patterns, or change the rules.
+    intro: |
+      <p>
+        A grid of cells, each alive or dead. A dead cell with exactly three live
+        neighbours is born; a live one with two or three survives; everything else
+        dies. That's all of it, and somehow it's enough.
+      </p>
+      <p class="meta">
+        Click or drag to draw. Pick a pattern to stamp it instead. The edges wrap.
+        Try the rule <kbd>B36/S23</kbd>, or <kbd>B2/S</kbd>.
+        <span class="keys"><kbd>space</kbd> play · <kbd>s</kbd> step · <kbd>r</kbd> random · <kbd>c</kbd> clear</span>
+      </p>
+    colophon: Written in Dart, compiled to JavaScript, baked into this page. Older cells fade, so the parts still changing stay dark.
+
+  - slug: universe
+    title: Universe
+    note: A small physics engine. Set the laws of nature, then fling things into it.
+    description: A physics sandbox written in Dart. Change gravity, a downward pull, charge, wind, drag and bounce while it runs, and fling new bodies in.
+    intro: |
+      <p>
+        Circles in a box, and a handful of laws you can rewrite while they run:
+        gravity, every body pulling on every other; a steady pull down, like
+        standing on a planet; like charges pushing apart; wind; drag; and how
+        much a collision gives back.
+      </p>
+      <p class="meta">
+        Press and drag to throw a body; just click to drop one. Pick a universe
+        to start from, then change its laws. Charged bodies with a minus charge
+        are drawn as rings.
+        <span class="keys"><kbd>space</kbd> play · <kbd>s</kbd> step · <kbd>r</kbd> reset · <kbd>c</kbd> empty · <kbd>t</kbd> trails</span>
+      </p>
+    colophon: Written in Dart, compiled to JavaScript, baked into this page. Circles only, no spin or friction. Energy and momentum in the readout drift only when drag, wind, walls or sticky collisions say they should.
+
+  - slug: population
+    title: Population
+    note: Civilizations competing for land, fighting, evolving, splitting into species. Meteors and climate change optional.
+    description: An evolution simulation written in Dart. Civilizations compete for food and fight, pass on their genes, drift, split into new species, and weather droughts, plagues, meteors and a changing climate.
+    intro: |
+      <p>
+        Pick how many civilizations, how big they start and how much land they
+        get. The land is valleys, each with its own climate, and every
+        civilization starts in one, built for its weather. Every creature
+        carries six genes (speed, size, sight, aggression, the climate it
+        likes, and a neutral one that only drifts), and parents pass each on
+        whole, like an allele, with a small mutation. When a population comes
+        apart into two groups too different to interbreed, a new species is
+        born, and named the way naturalists name them: its lineage, then what
+        sets it apart, so the fierce ones that split from the Aru are
+        <i>Aru ferox</i>. The chronicle says why each split happened and how
+        each species' last members died.
+      </p>
+      <p class="meta">
+        Every creature is drawn from its own genes (the key under the map shows
+        how): size is size, faster ones are longer, sharper-eyed ones have
+        longer antennae, fiercer ones grow a horn, cold-built ones grow fur,
+        and the neutral gene shifts its colour, so drifting families slowly
+        change hue. Click one to see it beside the average of its species. Young ones start small. One second is one year at ×1. At ×1000, as fast as your machine can manage (the readout shows the real rate), tens of thousands of years pass a minute.
+        Click a creature to follow it. The shading on the map is food.
+        Throw meteors, plagues, droughts and wars yourself, and choose which
+        of them also happen by themselves. Every meteor is remembered, with
+        its size and its toll; a big one's dust cools the whole land for a
+        generation, and its crater takes a century to heal. Hold rain over
+        a valley and it grows richer, until it floods; dry one out and watch
+        its creatures leave, or die. Warm the climate or cool it and it
+        changes over decades, not overnight: creatures built for the old
+        weather adapt, grow or shed their fur, move, or die out. The chart's
+        climate view shows them chasing the land's temperature.
+        <span class="keys"><kbd>space</kbd> pause · <kbd>n</kbd> new world · <kbd>p</kbd> plague · <kbd>d</kbd> drought · <kbd>g</kbd> plenty · <kbd>w</kbd> war · <kbd>h</kbd> warming · <kbd>c</kbd> cooling · <kbd>f</kbd> follow · <kbd>m</kbd> meteor · <kbd>r</kbd> rain · <kbd>y</kbd> dry</span>
+      </p>
+    colophon: Written in Dart, compiled to JavaScript, baked into this page, sounds included, synthesized as they play. Creatures live 55 to 80 years. Real speciation takes far longer; here a thousand years will usually do it.
+
+  - slug: fractals
+    title: Fractals
+    note: The Mandelbrot set, its Julia sets, and the Burning Ship. Zoom in until the numbers run out.
+    description: A fractal explorer written in Dart. Zoom into the Mandelbrot set, its Julia sets, and the Burning Ship.
+    intro: |
+      <p>
+        Take a number, square it, add a constant, and repeat. Some starting
+        points stay small forever; the rest fly off to infinity. Colour the ones
+        that stay, and the border between the two turns out to have no end of
+        detail, however close you look.
+      </p>
+      <p class="meta">
+        Click to zoom in, shift-click to zoom out, drag to move, scroll to zoom
+        smoothly. Every point of the Mandelbrot set has a Julia set of its own:
+        zoom somewhere, then ask for it.
+        <span class="keys"><kbd>+</kbd> in · <kbd>−</kbd> out · <kbd>j</kbd> Julia · <kbd>r</kbd> start again</span>
+      </p>
+    colophon: Written in Dart, compiled to JavaScript, baked into this page. Computed pixel by pixel in 64-bit floating point, which gives out at around ten trillion times zoom.
+
+  - slug: light
+    title: Light
+    note: An optical bench. Lasers of any colour, mirrors, prisms, lenses, and every angle measured.
+    description: A geometric optics bench written in Dart. Place lasers of any colour or white light, mirrors, prisms, lenses and gratings, and read the angles of reflection and refraction where light meets each surface.
+    intro: |
+      <p>
+        Lasers, mirrors and pieces of glass, and light traced through them by
+        the rules it actually follows: it leaves a mirror at the angle it
+        arrived; it bends crossing into glass, by Snell's law; a little of it
+        reflects off glass anyway, by Fresnel's equations; past the critical
+        angle, none of it gets out; and glass bends violet more than red, so
+        white light comes apart into a spectrum.
+      </p>
+      <p class="meta">
+        Add as many lasers as you like, white or any colour, as a single ray
+        or a wide beam. Drag things to move them; drag the ring on the one
+        you've selected to turn it, or scroll over it. With angles on, every
+        main ray shows its normal and the angles either side. Point at any
+        place light meets a surface to read what happened there, Snell's law
+        worked out. Colours add, the way light does.
+        <span class="keys"><kbd>[</kbd> <kbd>]</kbd> turn 1° · <kbd>{</kbd> <kbd>}</kbd> turn 15° · <kbd>delete</kbd> remove · <kbd>esc</kbd> deselect</span>
+      </p>
+    colophon: Written in Dart, compiled to JavaScript, baked into this page. Rays only, no waves, except that the grating uses its equation to send each colour its own way. White light is 24 wavelengths from 400 to 700 nm. Indices follow Cauchy's formula.

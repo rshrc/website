@@ -1,0 +1,67 @@
+      /* Shared by the generated pages (shelf, games): the site's tokens, type,
+         theme toggle and footer. */
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #111111;
+        --link: #0b57d0;
+        --muted: #555555;
+        --rule: #e2e2e2;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #111111;
+          --fg: #e6e6e6;
+          --link: #8ab4f8;
+          --muted: #b0b0b0;
+          --rule: #2a2a2a;
+        }
+      }
+      :root[data-theme="light"] {
+        --bg: #ffffff; --fg: #111111; --link: #0b57d0; --muted: #555555; --rule: #e2e2e2;
+      }
+      :root[data-theme="dark"] {
+        --bg: #111111; --fg: #e6e6e6; --link: #8ab4f8; --muted: #b0b0b0; --rule: #2a2a2a;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        font-family: Times, Georgia, serif;
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        transition: background-color 220ms ease, color 220ms ease;
+      }
+      .wrapper { max-width: 700px; margin: 0 auto; padding: 5vw 16px; position: relative; }
+      h1 { font-family: "Helvetica Neue", Helvetica, sans-serif; font-weight: normal; margin: 0 0 0.3em; }
+      p { font-size: 1.1rem; line-height: 1.5em; }
+      a { text-decoration: none; color: var(--link); transition: color 220ms ease; }
+      a:hover { text-decoration: underline; }
+      .muted { color: var(--muted); }
+      .meta { font-size: 0.9rem; color: var(--muted); line-height: 1.5em; margin: 0 0 0.6rem; }
+
+      /* theme toggle, same as the other pages */
+      .toggle-row { position: absolute; top: 1rem; right: 1rem; }
+      /* INCLUDE css/theme-toggle.css */
+
+      /* the shared site footer, same as the article pages */
+      .footer {
+        margin-top: 3em;
+        border-top: 5px solid var(--rule);
+        overflow: hidden;
+        transition: border-color 220ms ease;
+      }
+      .footer p { font-size: 1rem; }
+      .rishi-portrait {
+        margin: 1em 2em 1em 0;
+        width: 175px;
+        float: left;
+        animation: appear-portrait 6s;
+      }
+      @keyframes appear-portrait { 0% { opacity: 0; } 40% { opacity: 1; } }
+      @media screen and (max-width: 420px) {
+        .rishi-portrait { float: none; margin-right: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) { * { transition-duration: 1ms !important; } }
+    

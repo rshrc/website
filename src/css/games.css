@@ -1,0 +1,68 @@
+      /* INCLUDE css/base.css */
+
+      /* the board: no frame, one hairline beneath it, like a rule in a book */
+      .board { margin: 1.2rem 0 0.4rem; }
+      #stage {
+        display: block; width: 100%;
+        border-bottom: 1px solid var(--rule);
+        touch-action: none; cursor: crosshair;
+      }
+
+      /* controls: plain text, no boxes, same as the shelf's filters */
+      .controls { margin: 0 0 0.35rem; font-size: 0.9rem; color: var(--muted); line-height: 1.9; }
+      .controls button {
+        background: none; border: 0; padding: 0; margin: 0; cursor: pointer;
+        font: inherit; color: var(--link);
+      }
+      .controls button:hover { text-decoration: underline; }
+      .controls button[aria-pressed="true"] { color: var(--fg); text-decoration: underline; }
+      .controls .label { color: var(--muted); }
+      .controls button:disabled { color: var(--muted); cursor: default; text-decoration: none; }
+      .controls select, .controls input[type="text"] {
+        font-family: inherit; font-size: inherit; color: var(--fg);
+        background: transparent; border: 0; border-bottom: 1px solid var(--rule);
+        padding: 0; border-radius: 0;
+      }
+      .controls select:focus, .controls input[type="text"]:focus { outline: none; border-bottom-color: var(--muted); }
+      .controls option { color: #111; }
+      .slider { white-space: nowrap; }
+      .slider .value { font-variant-numeric: tabular-nums; color: var(--fg); }
+      input[type="range"] {
+        -webkit-appearance: none; appearance: none; background: transparent;
+        width: 6.5rem; vertical-align: middle; margin: 0;
+      }
+      input[type="range"]::-webkit-slider-runnable-track { height: 1px; background: var(--muted); }
+      input[type="range"]::-moz-range-track { height: 1px; background: var(--muted); }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none; width: 9px; height: 9px; margin-top: -4px;
+        border-radius: 50%; background: var(--fg); border: 0;
+      }
+      input[type="range"]::-moz-range-thumb { width: 9px; height: 9px; border-radius: 50%; background: var(--fg); border: 0; }
+
+      /* the population map breaks out of the text column on wide screens */
+      .board.wide { width: min(1100px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+      #key { display: block; width: 100%; margin-top: 0.6rem; }
+      .inspect-row { display: flex; gap: 1rem; align-items: center; margin: 0.5rem 0 0; }
+      #portrait { flex: 0 0 auto; }
+      .inspect { margin: 0; min-height: 1.5em; }
+      #tree { display: block; width: 100%; margin-top: 0.9rem; }
+      .chronicle { list-style: none; margin: 0.4rem 0 0; padding: 0; font-size: 0.9rem; line-height: 1.6; color: var(--muted); }
+      .chronicle .year { font-variant-numeric: tabular-nums; margin-right: 0.4rem; }
+      .chronicle li:first-child { color: var(--fg); }
+      h2.small { font-family: "Helvetica Neue", Helvetica, sans-serif; font-weight: normal; font-size: 1rem; margin: 1.4rem 0 0.2rem; }
+      #chart { display: block; width: 100%; margin-top: 0.9rem; cursor: crosshair; }
+      .groups { list-style: none; margin: 0.6rem 0 0.4rem; padding: 0; font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+      .groups li { line-height: 1.7; }
+      .groups .dot { font-size: 0.8rem; margin-right: 0.35rem; }
+      .groups .name { color: var(--fg); margin-right: 0.35rem; }
+
+      #readout { font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; margin: 0.8rem 0 0; min-height: 1.5em; }
+      .keys { font-size: 0.85rem; color: var(--muted); }
+      kbd { font-family: inherit; border-bottom: 1px solid var(--rule); padding: 0 0.15em; }
+
+      /* the games index: one line per game */
+      .games { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+      .games li { border-bottom: 1px solid var(--rule); padding: 0.55rem 0; font-size: 1.05rem; line-height: 1.45; }
+      .games .note { color: var(--muted); }
+      .colophon { margin-top: 2rem; font-size: 0.9rem; color: var(--muted); }
+      noscript p { color: var(--muted); }

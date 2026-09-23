@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Games | Rishi Banerjee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta name="description" content="Small games and simulations Rishi Banerjee wrote in Dart.">
+    <link rel="canonical" href="https://banerjeerishi.com/games/">
+    <meta property="og:title" content="Games | Rishi Banerjee">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://banerjeerishi.com/games/">
+    <meta property="og:description" content="Small games and simulations Rishi Banerjee wrote in Dart.">
+    <meta property="og:image" content="https://banerjeerishi.com/img/share-card.jpg">
+    <meta property="og:site_name" content="Rishi Banerjee">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@realRishiB">
+    <style>/* INCLUDE css/games.css */</style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="toggle-row">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
+          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <h1>Games</h1>
+      <p>
+        Small simulations, all written in Dart, because I like Dart. Each one is a
+        single page with no requests of its own.
+      </p>
+      <p class="meta"><a href="/">Back to home</a></p>
+
+      <ul class="games">
+        <!-- GENERATED_GAMES -->
+      </ul>
+
+      <div class="footer">
+        <!-- GENERATED_FOOTER -->
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var key = 'theme';
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        function apply(theme) {
+          if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+          else root.removeAttribute('data-theme');
+        }
+        try { apply(localStorage.getItem(key)); } catch (e) {}
+        btn.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          try { localStorage.setItem(key, next); } catch (e) {}
+          apply(next);
+        });
+      })();
+    </script>
+  </body>
+</html>

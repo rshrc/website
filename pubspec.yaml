@@ -3,7 +3,7 @@ description: Filip Hracek's homepage + associated tooling.
 version: 0.0.1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.4.0 <4.0.0'
 
 dev_dependencies:
   args: ^2.4.2
@@ -14,4 +14,5 @@ dev_dependencies:
   markdown: ^7.1.1
   path: ^1.8.3
   toml: ^0.14.0
+  web: ^1.1.1
   yaml: ^3.1.2

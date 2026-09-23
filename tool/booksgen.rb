@@ -10,6 +10,7 @@ require "uri"
 require "yaml"
 require_relative "lib/site"
 require_relative "lib/includes"
+require_relative "lib/footer"
 
 FIELDS   = %i[title author status progress_percent progress_note category
               favourite started_at finished_at rating notes amazon].freeze
@@ -39,17 +40,6 @@ def amazon(book)
     "#{book[:title]} #{book[:author]}".gsub(/[^\p{Alnum}\s]/, " ").split.join(" "))
 end
 
-# The footer the article pages use, so the two stay in sync. A deliberately
-# small Markdown pass: the file is a raw <img> tag plus a few paragraphs of
-# links and bold text.
-def footer
-  Site.path("src/text/page_footer.md").read.split(/\n{2,}/).map(&:strip).reject(&:empty?).map do |block|
-    next block if block.start_with?("<")
-
-    "<p>#{block.gsub("&", "&amp;").gsub(/\*\*(.+?)\*\*/, '<strong>\1</strong>').gsub(/\[(.+?)\]\((.+?)\)/, '<a href="\2">\1</a>')}</p>"
-  end.join("\n        ")
-end
-
 books = YAML.safe_load(Site.path("src/books/shelf.yaml").read, permitted_classes: [Date], symbolize_names: true)[:books] || []
 books.each_with_index do |book, i|
   check(book, "shelf.yaml entry ##{i + 1} (#{book[:title] || "untitled"})")
@@ -60,7 +50,7 @@ end
 
 page = Includes.expand(Site.path("src/books/shelf.template.html").read)
                .sub("GENERATED_JSON") { JSON.generate(books).gsub("<") { '<' } }
-               .sub("<!-- GENERATED_FOOTER -->") { footer }
+               .sub("<!-- GENERATED_FOOTER -->") { Footer.html }
 
 out = Site.path("web/books/shelf.html")
 out.dirname.mkpath

@@ -22,6 +22,8 @@ Then there are books, poems, and considerably more philosophy than is probably u
 
 <!-- SECTION experiments -->
 
+<!-- SECTION games -->
+
 <!-- SECTION writing -->
 
 ### Essays

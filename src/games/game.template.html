@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAME_TITLE | Rishi Banerjee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta name="description" content="GAME_DESCRIPTION">
+    <link rel="canonical" href="https://banerjeerishi.com/games/GAME_SLUG.html">
+
+    <meta property="og:title" content="GAME_TITLE | Rishi Banerjee">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://banerjeerishi.com/games/GAME_SLUG.html">
+    <meta property="og:description" content="GAME_DESCRIPTION">
+    <meta property="og:image" content="https://banerjeerishi.com/img/share-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Rishi Banerjee">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@realRishiB">
+    <meta name="twitter:title" content="GAME_TITLE | Rishi Banerjee">
+    <meta name="twitter:description" content="GAME_DESCRIPTION">
+    <meta name="twitter:image" content="https://banerjeerishi.com/img/share-card.jpg">
+    <style>/* INCLUDE css/games.css */</style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="toggle-row">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
+          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <h1>GAME_TITLE</h1>
+      GAME_INTRO
+      <p class="meta"><a href="/games/">All games</a> · <a href="/">Home</a></p>
+
+      <div class="board"><canvas id="stage"></canvas></div>
+      <div id="controls"></div>
+      <p id="readout" aria-live="polite"></p>
+      <noscript><p>This one needs JavaScript. It's Dart, compiled.</p></noscript>
+
+      <p class="colophon">GAME_COLOPHON</p>
+
+      <div class="footer">
+        <!-- GENERATED_FOOTER -->
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var key = 'theme';
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        function apply(theme) {
+          if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+          else root.removeAttribute('data-theme');
+        }
+        try { apply(localStorage.getItem(key)); } catch (e) {}
+        btn.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          try { localStorage.setItem(key, next); } catch (e) {}
+          apply(next);
+        });
+      })();
+    </script>
+    <script>GENERATED_JS</script>
+  </body>
+</html>
