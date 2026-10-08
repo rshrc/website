@@ -21,5 +21,8 @@ items:
   - text: Light
     url: /games/light.html
     note: "- an optical bench: lasers, mirrors, prisms and lenses, with the angles"
+  - text: Tilchata
+    url: /games/tilchata.html
+    note: "- a 3D horror-comedy: it's 3 AM and the cockroach can fly"
   - text: All games
     url: /games/
