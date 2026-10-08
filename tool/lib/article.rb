@@ -8,15 +8,30 @@ require_relative "excerpt"
 
 # An essay, published exactly the way tool/htmlgen.dart decides: a note in the
 # markdown directory with front matter, `publish: true` and a `created` date.
-class Article < Data.define(:title, :slug, :created, :opening, :minutes)
+# Its `topic` (also front matter) says where it's listed.
+class Article < Data.define(:title, :slug, :created, :opening, :minutes, :topic)
   FRONT_MATTER = /^\s*-{3,}\s*$/
   WORDS_PER_MINUTE = 230
+
+  # The order topics are listed in. A topic not named here still gets listed,
+  # after these; an article with no topic goes under OTHER.
+  TOPICS = ["Django", "Rails", "Flutter", "PostgreSQL", "Servers", "Git & Vim", "Startups",
+            "Philosophy", "Stories & Poems", "From Books"].freeze
+  OTHER = "Other"
 
   # Newest first. Several articles share a date, so ties go by title.
   def self.published
     Site.markdown_dir.glob("*.md").filter_map { from(_1) }
         .reject(&:archive?)
         .sort_by { [-_1.created.to_i, _1.title.downcase] }
+  end
+
+  # The essays as Markdown: a heading for each topic, newest first under it.
+  def self.by_topic(articles, heading:)
+    articles.group_by(&:topic)
+            .sort_by { |topic, _| [TOPICS.index(topic) || TOPICS.size, topic == OTHER ? 1 : 0, topic] }
+            .map { |topic, list| "#{heading} #{topic}\n\n#{list.map(&:to_markdown).join("\n")}" }
+            .join("\n\n")
   end
 
   def self.from(file)
@@ -30,7 +45,8 @@ class Article < Data.define(:title, :slug, :created, :opening, :minutes)
     body = lines[(close + 2)..].join
     name = file.basename(".md").to_s
     new(title: (meta[:title] || name).to_s, slug: Site.slugify(name), created: time(meta[:created]),
-        opening: Excerpt.of(body), minutes: [(body.split.size / WORDS_PER_MINUTE.to_f).ceil, 1].max)
+        opening: Excerpt.of(body), minutes: [(body.split.size / WORDS_PER_MINUTE.to_f).ceil, 1].max,
+        topic: meta[:topic].to_s.strip.then { _1.empty? ? OTHER : _1 })
   end
 
   def self.time(value)

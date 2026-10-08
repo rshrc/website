@@ -40,7 +40,7 @@ Then there are books, poems, and considerably more philosophy than is probably u
 
 ## About this page
 
-This page consists of only two resources: the HTML and the picture.  
+This page consists of only two resources: the HTML and the picture. The styles, scripts and icons are baked into the HTML at build time; album covers load only when you hover a Spotify link.  
 The ‘appearing’ effect is achieved using the CSS `keyframes` feature, orchestrated by a compile-time Dart script.
 
 This site is based on [Filiph Hráček](https://github.com/filiph)'s original work on [filiph/filiphnet](https://github.com/filiph/filiphnet), a minimalist, Markdown-first personal site generator.  

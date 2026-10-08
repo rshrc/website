@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://banerjeerishi.com/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/how-to-manage-dependencies-in-flutter-without-a-framework.html</loc>
@@ -396,17 +401,17 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://banerjeerishi.com/text/why-i-chose-vim.html</loc>
-    <lastmod>2024-07-07</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://banerjeerishi.com/text/why-choose-django-as-a-startup.html</loc>
     <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://banerjeerishi.com/text/why-do-we-suffer.html</loc>
+    <lastmod>2024-07-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/text/why-i-chose-vim.html</loc>
     <lastmod>2024-07-07</lastmod>
     <priority>0.80</priority>
   </url>
@@ -431,8 +436,38 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://banerjeerishi.com/text/index.html</loc>
-    <lastmod>2023-08-06</lastmod>
-    <priority>0.80</priority>
+    <loc>https://banerjeerishi.com/games/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/games/life.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/games/universe.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/games/population.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/games/fractals.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/games/light.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://banerjeerishi.com/books/shelf.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.70</priority>
   </url>
 </urlset>

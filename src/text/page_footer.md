@@ -2,6 +2,6 @@
 
 I'm Rishi Banerjee. I build software, mostly in **Python**, or **Ruby**. I write here about whatever has my attention: tech, essays, philosophy, and the rest. I use **Vim**. I won't be taking questions on that.
 
-Find me: [GitHub](https://github.com/rshrc) • [LinkedIn](https://www.linkedin.com/in/rishibanerjee21/) • [Stack Overflow](https://stackoverflow.com/users/8028903/deprecatedapi) • [Medium](https://medium.com/@banerjeerishi)
+Find me: [GitHub](https://github.com/rshrc) • [Twitter](https://twitter.com/realRishiB) • [Medium](https://medium.com/@banerjeerishi)
 
 **Topics**: Python • Ruby on Rails • Vim • Software Engineering • Essays • Philosophy

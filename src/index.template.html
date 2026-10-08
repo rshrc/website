@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rishi Banerjee | Entrepreneur, Engineer & Writer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="canonical" href="https://banerjeerishi.com/">
     <link rel="alternate" type="application/atom+xml" title="Rishi Banerjee’s Texts" href="https://banerjeerishi.com/text/atom.xml" />
@@ -40,8 +39,6 @@
     <meta itemprop="description" content="Rishi is a full time entrepreneur and a part time philosopher">
     <meta itemprop="image" content="https://banerjeerishi.com/img/share-card.jpg">
     <meta itemprop="url" content="https://banerjeerishi.com/">
-    <meta itemprop="gender" content="Male">
-    <meta itemprop="honorificPrefix" content="Mgr.">
 
     <!-- JSON-LD Person Schema -->
     <script type="application/ld+json">
@@ -54,14 +51,9 @@
       "sameAs": [
         "https://twitter.com/realRishiB",
         "https://github.com/rshrc",
-        "https://www.linkedin.com/in/rishibanerjee21/",
         "https://medium.com/@banerjeerishi"
       ],
-      "jobTitle": "Entrepreneur, Software Engineer, Writer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Opmaint"
-      },
+      "jobTitle": "Software Engineer",
       "knowsAbout": [
         "Python Programming",
         "Django Framework", 
@@ -82,20 +74,19 @@
         "name": "Bengaluru",
         "addressCountry": "India"
       },
-      "description": "Rishi Banerjee is a full-time entrepreneur and software engineer specializing in Python, Django, Ruby on Rails, and Dart. Currently leading engineering at a B2B SaaS startup with expertise in backend development and scalable web applications.",
+      "description": "Rishi Banerjee is a software engineer in Bengaluru who builds with Python, Django, Ruby on Rails and Dart, and writes about software, startups and philosophy.",
       "keywords": "Rishi Banerjee, Python developer, Django expert, Ruby on Rails, Vim enthusiast, software engineer, Bengaluru developer"
     }
     </script>
 
     <style>/* INCLUDE css/home.css */</style>
+    <meta name="theme-color" content="#ffffff">
+    <script>/* INCLUDE js/theme.js */</script>
   </head>
   <body>
     <div class="wrapper">
       <div class="theme-toggle-wrap">
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
-          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
-        </button>
+        /* INCLUDE partials/theme-toggle.html */
       </div>
       <div class="title-row">
         <h1>Rishi Banerjee</h1>
@@ -107,36 +98,6 @@
     <!-- GENERATED PREVIEWS -->
     <script>
 /* INCLUDE js/preview.js */
-    </script>
-    <script>
-      (function () {
-        var key = 'theme';
-        var root = document.documentElement;
-        var btn = document.getElementById('theme-toggle');
-        if (!btn) return;
-
-        function apply(theme) {
-          if (theme === 'light' || theme === 'dark') {
-            root.setAttribute('data-theme', theme);
-          } else {
-            root.removeAttribute('data-theme');
-          }
-        }
-
-        function current() {
-          return localStorage.getItem(key);
-        }
-
-        var saved = current();
-        apply(saved);
-
-        btn.addEventListener('click', function () {
-          var now = root.getAttribute('data-theme');
-          var next = now === 'dark' ? 'light' : 'dark';
-          localStorage.setItem(key, next);
-          apply(next);
-        });
-      })();
     </script>
   </body>
 </html>

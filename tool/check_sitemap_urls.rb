@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Checks that every article URL in the sitemap has a page in the build.
+# Checks that every URL in the sitemap has a page in the build.
 # Exits 1 when some are missing, 2 when there's nothing to check.
 
 require "optparse"
@@ -22,20 +22,20 @@ end
 fail! "sitemap not found: #{sitemap}" unless File.exist?(sitemap)
 fail! "build dir not found: #{build}" unless Dir.exist?(build)
 
-articles = REXML::XPath.match(REXML::Document.new(File.read(sitemap)), "//xmlns:url/xmlns:loc")
-                       .map { _1.text.to_s.strip }
-                       .select { URI.parse(_1).path.then { |path| path.start_with?("/text/") && path.end_with?(".html") } }
-fail! "no blog URLs found in sitemap (/text/*.html)." if articles.empty?
+urls = REXML::XPath.match(REXML::Document.new(File.read(sitemap)), "//xmlns:url/xmlns:loc").map { _1.text.to_s.strip }
+fail! "no URLs found in sitemap." if urls.empty?
 
-missing = articles.filter_map do |loc|
-  page = File.join(build, URI.parse(loc).path.delete_prefix("/"))
+# A directory URL is served from its index.html, as Firebase does.
+missing = urls.filter_map do |loc|
+  path = URI.parse(loc).path
+  page = File.join(build, path.delete_prefix("/"), *("index.html" if path.end_with?("/")))
   "#{loc} -> missing #{page}" unless File.exist?(page)
 end
 
 if missing.any?
-  puts "FAIL: #{missing.size} of #{articles.size} sitemap blog URLs are not reachable:"
+  puts "FAIL: #{missing.size} of #{urls.size} sitemap URLs are not reachable:"
   missing.each { puts "  - #{_1}" }
   exit 1
 end
 
-puts "PASS: all #{articles.size} sitemap blog URLs map to existing build artifacts."
+puts "PASS: all #{urls.size} sitemap URLs map to existing build artifacts."

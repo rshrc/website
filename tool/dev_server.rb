@@ -13,7 +13,7 @@ WATCHED_FILES = %w[Makefile htmlgen.toml sitemap.xml robots.txt].freeze
 
 # The build writes these itself. Watching them would make every build set off
 # the next one.
-GENERATED = %w[src/.index.generated.md src/.index.template.generated.html].freeze
+GENERATED = %w[src/.index.generated.md src/.index.template.generated.html src/.essays.generated.md].freeze
 
 def fingerprint
   files = WATCHED_DIRS.flat_map { Dir.glob("#{_1}/**/*", File::FNM_DOTMATCH, base: Site::ROOT) } + WATCHED_FILES

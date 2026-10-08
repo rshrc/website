@@ -1,42 +1,41 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Rewrites sitemap.xml from the articles in markdowns/, newest first, keeping
-# a timestamped backup of the old one. An article's date is its front matter
-# `created`, or the file's modified time when that's missing.
+# Rewrites sitemap.xml from everything the build publishes, keeping a
+# timestamped backup of the old one: the homepage, /text/ and its articles,
+# /games/ and each game, and the shelf. An article's date is its front matter
+# `created`; a generated page's is when its source last changed.
 
 require "fileutils"
 require "time"
+require "yaml"
 require_relative "lib/site"
+require_relative "lib/article"
 
-MARKDOWNS = Site.path("markdowns")
-SITEMAP   = Site.path("sitemap.xml")
+SITEMAP = Site.path("sitemap.xml")
 
-def created(file)
-  lines = file.readlines(encoding: "utf-8")
-  return unless lines.first&.strip == "---"
-
-  value = lines.drop(1).take_while { _1.strip != "---" }
-               .filter_map { _1[/^\s*created\s*:\s*(.+)$/i, 1] }.first&.strip&.gsub(/\A['"]|['"]\z/, "")
-  Time.parse(value).utc if value && !value.empty?
-rescue ArgumentError
-  nil
+# The newest modification time among files matching the globs.
+def changed(*globs)
+  globs.flat_map { Site::ROOT.glob(_1) }.select(&:file?).map(&:mtime).max&.utc || Time.now.utc
 end
 
-def url(loc, date, priority)
-  ["  <url>", "    <loc>#{loc}</loc>", "    <lastmod>#{date.strftime("%Y-%m-%d")}</lastmod>",
+def url(path, date, priority)
+  ["  <url>", "    <loc>#{Site::URL}#{path}</loc>", "    <lastmod>#{date.strftime("%Y-%m-%d")}</lastmod>",
    "    <priority>#{priority}</priority>", "  </url>"]
 end
 
-unless MARKDOWNS.directory?
-  warn "Error markdown dir not found: #{MARKDOWNS}"
-  exit 2
-end
+articles = Article.published
+games    = YAML.safe_load(Site.path("src/games/games.yaml").read, symbolize_names: true)[:games] || []
+shared   = %w[src/games/shared/**/* src/games/*.html src/games/games.yaml]
 
-articles = MARKDOWNS.children.sort.select { _1.file? && _1.extname.downcase == ".md" }.map do |file|
-  [created(file) || file.mtime.utc, Site.slugify(file.basename(".md").to_s)]
-end
-puts "No markdown files found, writing sitemap with only homepage." if articles.empty?
+pages = [
+  ["/", Time.now.utc, "1.00"],
+  ["/text/", articles.map(&:created).max || Time.now.utc, "0.90"],
+  *articles.map { [_1.path, _1.created, "0.80"] },
+  ["/games/", changed(*shared), "0.70"],
+  *games.map { ["/games/#{_1[:slug]}.html", changed("src/games/#{_1[:slug]}/**/*", *shared), "0.60"] },
+  ["/books/shelf.html", changed("src/books/shelf.*"), "0.70"],
+]
 
 if SITEMAP.exist?
   backup = "#{SITEMAP}.bak.#{Time.now.utc.strftime("%Y%m%dT%H%M%SZ")}"
@@ -45,8 +44,6 @@ if SITEMAP.exist?
 end
 
 lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-         *url("#{Site::URL}/", Time.now.utc, "1.00"),
-         *articles.sort_by { -_1.first.to_i }.flat_map { |date, slug| url("#{Site::URL}/text/#{slug}.html", date, "0.80") },
-         "</urlset>"]
+         *pages.flat_map { url(*_1) }, "</urlset>"]
 SITEMAP.write("#{lines.join("\n")}\n")
-puts "Wrote sitemap to #{SITEMAP}"
+puts "Wrote #{pages.size} URLs to #{SITEMAP}"

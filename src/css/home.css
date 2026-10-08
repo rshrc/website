@@ -60,6 +60,13 @@
         margin-top: 1.6em;
       }
 
+      /* Essay topics, under Essays. */
+      h4 {
+        font-weight: normal;
+        font-style: italic;
+        margin: 1.2em 0 0;
+      }
+
       ul {
         padding-left: 1em;
       }

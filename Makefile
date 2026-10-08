@@ -7,7 +7,9 @@
 run:
 	ruby tool/dev_server.rb
 
-deploy: builder
+# Deploys start from an empty build/, so nothing a past build left there (a
+# deleted article, an interrupted run's temp file) gets shipped.
+deploy: clean builder
 	firebase deploy
 	echo "Visit @ https://banerjeerishi.com"
 
@@ -26,13 +28,14 @@ copy_web: spanify
 # homegen fills the YAML sections, essay list and hover cards into copies of
 # index.md and its template first, so spanify animates generated words too.
 # Writing to a temp file (named per process, in case two builds overlap) means
-# a failed run never leaves a half-empty page.
+# a failed run never leaves a half-empty page, and the trap removes it even
+# when the run is interrupted, so copy_web never ships it.
 spanify:
 	ruby tool/homegen.rb
 	mkdir -p web
-	tmp=web/index.html.$$$$; \
+	tmp=web/index.html.$$$$; trap 'rm -f $$tmp' EXIT; trap 'exit 1' INT TERM; \
 	dart --enable-asserts tool/spanify.dart --html src/.index.template.generated.html src/.index.generated.md > $$tmp \
-	  && mv $$tmp web/index.html || { rm -f $$tmp; exit 1; }
+	  && mv $$tmp web/index.html
 
 htmlgen:
 	dart --enable-asserts tool/htmlgen.dart

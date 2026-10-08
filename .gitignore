@@ -40,3 +40,5 @@ web/games/
 # Built by tool/homegen.rb from src/index.md; spanify reads this copy.
 src/.index.generated.md
 src/.index.template.generated.html
+# Built by tool/homegen.rb too; htmlgen puts it on /text/.
+src/.essays.generated.md

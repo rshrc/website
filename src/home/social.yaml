@@ -6,8 +6,10 @@
 
 title: Social
 items:
-  - text: Github
+  - text: GitHub
     url: https://github.com/rshrc
-  - text: StackOverflow
-    url: https://stackoverflow.com/users/8028903/deprecatedapi
+    note: "- rshrc"
+  - text: Twitter
+    url: https://twitter.com/realRishiB
+    note: "- @realRishiB"
   - text: rishi.banerjee1009<span style="display:none">deletethisifyourenotarobot</span>@gmail<span style="display:none">thisaswell</span>.com

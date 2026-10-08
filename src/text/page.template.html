@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>GENERATED_TITLE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="alternate" type="application/atom+xml" title="Rishi Banerjee's Texts" href="https://banerjeerishi.com/text/atom.xml" />
 
@@ -45,14 +44,12 @@
     <!-- GENERATED_JSON_LD -->
 
     <style>/* INCLUDE css/article.css */</style>
+    <script>/* INCLUDE js/theme.js */</script>
   </head>
   <body>
     <div class="wrapper">
       <div class="theme-toggle-wrap">
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-          <i class="fa-regular fa-sun icon-sun" aria-hidden="true"></i>
-          <i class="fa-regular fa-moon icon-moon" aria-hidden="true"></i>
-        </button>
+        /* INCLUDE partials/theme-toggle.html */
       </div>
 
       <div class="title-row">
@@ -73,23 +70,5 @@
         <!-- <p><small><a href="https://banerjeerishi.com/text/atom.xml">RSS</a></small></p> -->
       </div>
     </div>
-    <script>
-      (function () {
-        var key = 'theme';
-        var root = document.documentElement;
-        var btn = document.getElementById('theme-toggle');
-        if (!btn) return;
-        function apply(theme) {
-          if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
-          else root.removeAttribute('data-theme');
-        }
-        apply(localStorage.getItem(key));
-        btn.addEventListener('click', function () {
-          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          localStorage.setItem(key, next);
-          apply(next);
-        });
-      })();
-    </script>
   </body>
 </html>

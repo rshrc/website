@@ -135,7 +135,7 @@ void main(List<String> args) {
     // Take the Markdown with Obsidian-specific notation
     // (such as `![[image.png]]` for an embedded picture)
     // and output a markdown that works everywhere.
-    final mdSourceGeneric =
+    var mdSourceGeneric =
         mdSourceObsidian.replaceAllMapped(ObsidianEmbed.regExp, (e) {
       final fullMatch = e.group(0)!;
       final path = e.group(1)!;
@@ -149,6 +149,19 @@ void main(List<String> args) {
       return embed.asHtml;
     });
     final articleWordCount = _countWords(mdSourceGeneric);
+
+    // The archive page lists every essay by topic. tool/homegen.rb writes
+    // that list, since it builds the same one for the homepage.
+    if (filename == 'index' && mdSourceGeneric.contains(_essaysMarker)) {
+      final essays = File(_essaysPath);
+      if (!essays.existsSync()) {
+        stderr.writeln("$_essaysPath is missing. Run `ruby tool/homegen.rb` "
+            "(or `make builder`) first.");
+        exit(6);
+      }
+      mdSourceGeneric =
+          mdSourceGeneric.replaceFirst(_essaysMarker, essays.readAsStringSync());
+    }
 
     // Generate appropriate JSON-LD schema
     var jsonLdString = filename == 'index'
@@ -343,6 +356,10 @@ String _sanitizeFilename(String input) {
   return slug.length > 255 ? slug.substring(0, 255) : slug;
 }
 
+const _essaysMarker = '<!-- ESSAYS -->';
+
+const _essaysPath = 'src/.essays.generated.md';
+
 final DateFormat _isoDateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss.mmm000Z');
 
 final RegExp _frontMatterLine = RegExp(r'^\s*-{3,}\s*$');
@@ -437,15 +454,10 @@ String _generatePersonJsonLd() {
     "image": "https://banerjeerishi.com/img/profile@4x.jpg",
     "sameAs": [
       "https://github.com/rshrc",
-      "https://www.linkedin.com/in/rishibanerjee21/",
-      "https://stackoverflow.com/users/8028903/deprecatedapi",
+      "https://twitter.com/realRishiB",
       "https://medium.com/@banerjeerishi"
     ],
-    "jobTitle": "Founding Engineer & Software Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Bitsila"
-    },
+    "jobTitle": "Software Engineer",
     "knowsAbout": [
       "Python Programming",
       "Django Framework", 
@@ -468,7 +480,7 @@ String _generatePersonJsonLd() {
       "name": "Bengaluru",
       "addressCountry": "India"
     },
-    "description": "Rishi Banerjee is a full-time entrepreneur and software engineer specializing in Python, Django, Ruby on Rails, and Dart. Currently leading engineering at a B2B SaaS startup with expertise in backend development and scalable web applications.",
+    "description": "Rishi Banerjee is a software engineer in Bengaluru who builds with Python, Django, Ruby on Rails and Dart, and writes about software, startups and philosophy.",
     "keywords": "Rishi Banerjee, Python developer, Django expert, Ruby on Rails, Vim enthusiast, software engineer, Bengaluru developer"
   },
   {
@@ -481,12 +493,7 @@ String _generatePersonJsonLd() {
       "name": "Rishi Banerjee"
     },
     "description": "Personal website of Rishi Banerjee, software engineer specializing in Python, Django, Ruby on Rails, and Vim. Technical articles and projects.",
-    "keywords": "Rishi Banerjee, Python, Django, Ruby on Rails, Vim, software engineering",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://banerjeerishi.com/text/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "keywords": "Rishi Banerjee, Python, Django, Ruby on Rails, Vim, software engineering"
   }
 ]
 </script>
@@ -537,8 +544,7 @@ String _generateArticleJsonLd({
     "url": "https://banerjeerishi.com",
     "sameAs": [
       "https://github.com/rshrc",
-      "https://www.linkedin.com/in/rishibanerjee21/",
-      "https://stackoverflow.com/users/8028903/deprecatedapi",
+      "https://twitter.com/realRishiB",
       "https://medium.com/@banerjeerishi"
     ]
   },

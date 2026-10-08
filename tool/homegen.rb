@@ -5,14 +5,16 @@
 # layout, and marks where the generated parts go:
 #
 #   <!-- SECTION gigs -->        src/home/gigs.yaml, as a Markdown list
-#   <!-- ESSAYS -->              every published article, newest first
+#   <!-- ESSAYS -->              every published article, by topic, newest first
 #
 # and the template gets the data for the hover cards:
 #
 #   <!-- GENERATED PREVIEWS -->  essay openings, YAML previews, Spotify covers
 #
 # It's all written out before spanify runs, so generated words fade in like
-# every other word on the page.
+# every other word on the page. The same list, with bigger headings, goes to
+# src/.essays.generated.md, which htmlgen puts on /text/ in place of the
+# <!-- ESSAYS --> marker in Index.md.
 
 require_relative "lib/site"
 require_relative "lib/includes"
@@ -33,15 +35,18 @@ placed = source.scan(SECTION).flatten
 (HomeSection.names - placed).each { warn "src/home/#{_1}.yaml exists but index.md never places it" }
 
 essays   = Article.published
+essays.select { _1.topic == Article::OTHER }.each { warn "#{_1.slug}: no `topic` in its front matter, listed under #{Article::OTHER}" }
 previews = LinkPreviews.new(essay_count: essays.size)
 essays.each { previews.add_essay(_1) }
 
 markdown = source.gsub(SECTION) { HomeSection.load($1).to_markdown(previews) }
-                 .sub(ESSAYS) { essays.map(&:to_markdown).join("\n") }
+                 .sub(ESSAYS) { Article.by_topic(essays, heading: "####") }
 previews.add_covers(markdown)
 page = Includes.expand(template).sub(PREVIEWS) { previews.to_script }
 
+topics = essays.map(&:topic).uniq.size
 { "src/.index.generated.md" => [markdown, "#{placed.size} sections, #{essays.size} essays"],
+  "src/.essays.generated.md" => ["#{Article.by_topic(essays, heading: "##")}\n", "#{essays.size} essays in #{topics} topics"],
   "src/.index.template.generated.html" =>
     [page, "#{essays.count(&:opening)} of #{essays.size} essays and #{previews.written_count} other links with a card"] }
   .each do |file, (content, summary)|
