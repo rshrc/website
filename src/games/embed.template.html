@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAME_TITLE | Rishi Banerjee</title>
+    <meta name="description" content="GAME_DESCRIPTION">
+    <link rel="canonical" href="https://banerjeerishi.com/games/GAME_SLUG.html">
+
+    <meta property="og:title" content="GAME_TITLE | Rishi Banerjee">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://banerjeerishi.com/games/GAME_SLUG.html">
+    <meta property="og:description" content="GAME_DESCRIPTION">
+    <meta property="og:image" content="https://banerjeerishi.com/img/share-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Rishi Banerjee">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@realRishiB">
+    <meta name="twitter:title" content="GAME_TITLE | Rishi Banerjee">
+    <meta name="twitter:description" content="GAME_DESCRIPTION">
+    <meta name="twitter:image" content="https://banerjeerishi.com/img/share-card.jpg">
+    <style>/* INCLUDE css/games.css */</style>
+    <style>
+      /* The game is a separate web export, shown in a frame. */
+      .embed { aspect-ratio: 16 / 9; background: #000; }
+      .embed iframe { display: block; width: 100%; height: 100%; border: 0; }
+      .embed-actions { display: flex; gap: 1rem; margin: 0.5rem 0 0; }
+      .embed-actions button { font: inherit; cursor: pointer; }
+      .touch-note { display: none; }
+      @media (pointer: coarse) { .touch-note { display: block; } }
+    </style>
+    <meta name="theme-color" content="#ffffff">
+    <script>/* INCLUDE js/theme.js */</script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="toggle-row">
+        /* INCLUDE partials/theme-toggle.html */
+      </div>
+
+      <h1>GAME_TITLE</h1>
+      GAME_INTRO
+      <p class="meta"><a href="/games/">All games</a> · <a href="/">Home</a></p>
+
+      <p class="meta touch-note">This one needs a mouse and keyboard, so it won't play on a phone or tablet. Try it on a computer.</p>
+      <div class="board wide embed">
+        <iframe id="game" src="/games/GAME_SLUG/index.html" title="GAME_TITLE" allow="fullscreen; autoplay" allowfullscreen></iframe>
+      </div>
+      <div class="board wide embed-actions">
+        <button type="button" id="fullscreen">Play full screen</button>
+        <a href="/games/GAME_SLUG/index.html">Open in its own tab</a>
+      </div>
+
+      <p class="colophon">GAME_COLOPHON</p>
+
+      <div class="footer">
+        <!-- GENERATED_FOOTER -->
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("fullscreen").addEventListener("click", () => {
+        const frame = document.getElementById("game");
+        (frame.requestFullscreen || frame.webkitRequestFullscreen).call(frame);
+        frame.focus();
+      });
+    </script>
+  </body>
+</html>

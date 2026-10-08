@@ -122,3 +122,23 @@ games:
         <span class="keys"><kbd>[</kbd> <kbd>]</kbd> turn 1° · <kbd>{</kbd> <kbd>}</kbd> turn 15° · <kbd>delete</kbd> remove · <kbd>esc</kbd> deselect</span>
       </p>
     colophon: Written in Dart, compiled to JavaScript, baked into this page. Rays only, no waves, except that the grating uses its equation to send each colour its own way. White light is 24 wavelengths from 400 to 700 nm. Indices follow Cauchy's formula.
+
+  # Not Dart: a Godot game, exported for the web from its own (private) repo.
+  # `embed` points at that export; gamesgen copies it into /games/<slug>/ at
+  # build time and wraps it in src/games/embed.template.html.
+  - slug: tilchata
+    embed: ../../flying-cockroach/build/web
+    title: Tilchata
+    note: A normal apartment at night, until the cockroach flies. Armed with a newspaper.
+    description: Tilchata, a horror-comedy 3D game. It's 3 AM, the cockroach can fly, and all Parmod has is a rolled-up newspaper, a chappal and his dignity.
+    intro: |
+      <p>
+        It's 3 AM. Parmod just wanted a glass of water. Then the cockroach
+        flew. Five rooms, each with a worse cockroach situation than the last,
+        and a final boss in the garden.
+      </p>
+      <p class="meta">
+        Desktop only: it needs a mouse and keyboard. Click the game to start.
+        <span class="keys"><kbd>WASD</kbd> move · mouse look · <kbd>click</kbd> swat · <kbd>Q</kbd> weapon · <kbd>E</kbd> interact · <kbd>V</kbd> camera · <kbd>esc</kbd> pause</span>
+      </p>
+    colophon: Made in Godot, running in your browser via WebAssembly. Furniture and garden models by Kenney (CC0). Every cockroach has a name. None of them made it.
